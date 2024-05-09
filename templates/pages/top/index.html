@@ -369,7 +369,7 @@
             const formData = new FormData(form);
             console.log(form)
 
-            fetch("{% url 'send_mail' %}", {
+            fetch("{% url 'homepage:send_mail' %}", {
                 method: 'POST',
                 body: formData
             })
