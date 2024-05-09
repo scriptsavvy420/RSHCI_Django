@@ -290,6 +290,14 @@
                             <input type="text" class="__form-item_input" placeholder="Your desires" name="contact-disires" id="contact-disires">
                             <p class="_error disires__error">Invalid Value. Please input your type of disire.</p>
                         </div>
+                        <div class="__form-item">
+                            <p class="__form-item_label">Invest Amount</p>
+                            <input type="text" class="__form-item_input" placeholder="Invest Amount" name="contact-investAmount" id="contact-investAmount"> 
+                        </div>
+                        <div class="__form-item">
+                            <p class="__form-item_label">Invest Periods</p>
+                            <input type="text" class="__form-item_input" placeholder="Invest Periods" name="contact-investPeriods" id="contact-investPeriods"> 
+                        </div>
                     </div>
                     <div class="__form-items_text">
                         <p class="__text-label">Message</p>
@@ -330,6 +338,10 @@
         var contact_phone = $("#contact-phone").val()
         var contact_type = $("#contact-disires").val()
         var contact_contents = $("#contact-text").val()
+        var contact_amount = $("#contact-investAmount").val()
+        var contact_periods = $("#contact-investPeriods").val()
+
+
         var contact_check = $("#contact-check").prop('checked')
         if(contact_name == ""){
             $("#contact-name").addClass("input-error")
@@ -380,6 +392,10 @@
                 $("#contact-phone").val("")
                 $("#contact-disires").val("")
                 $("#contact-text").val("")
+                $("#contact-investAmount").val("")
+                $("#contact-investPeriods").val("")
+
+
                 $("#contact-check").prop('checked',false)
                 alert("The message has been successfully sent.")  
                 

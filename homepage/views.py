@@ -58,6 +58,9 @@ def send_mail(request):
         email = request.POST.get('contact-email')
         phone = request.POST.get('contact-phone')
         disires = request.POST.get('contact-disires')
+        amount = request.POST.get('contact-investAmount')
+        periods = request.POST.get('contact-investPeriods')
+
         description = request.POST.get('contact-text')
         company_email = f"yoshidadaisuke0420@gmail.com"
 
@@ -72,6 +75,8 @@ def send_mail(request):
                 "email": email,
                 "phone": phone,
                 "disires":disires,
+                "amount":amount,
+                "periods":periods,
                 "description": description
             })
 
