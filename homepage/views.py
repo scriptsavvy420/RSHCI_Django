@@ -59,7 +59,7 @@ def send_mail(request):
         phone = request.POST.get('contact-phone')
         disires = request.POST.get('contact-disires')
         description = request.POST.get('contact-text')
-        company_email = f"yoshidadaisuke@gmail.com"
+        company_email = f"yoshidadaisuke0420@gmail.com"
 
         try:
             from django.core.mail import EmailMessage
@@ -87,5 +87,6 @@ def send_mail(request):
             
         except Exception as error:
             print(error)
+            return JsonResponse(str(error), status=400)
 
     return JsonResponse("Method Not Allowed", status=405)
