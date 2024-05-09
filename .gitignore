@@ -1,0 +1,5 @@
+.venv
+.env
+*.db
+node_modules/
+*/__pycache__/

@@ -1,0 +1,334 @@
+//header
+body {
+    width: 100%;
+    position: relative;
+
+}
+
+.c-header {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 150px;
+    z-index: 10;
+
+    @include media-sp {
+        padding: 10px 50px;
+    }
+
+    @include media-sm {
+        padding: 10px 20px;
+    }
+
+    &__logo {
+        width: 100px;
+        height: 100px;
+
+        @include media-sm {
+            width: 50px;
+            height: 50px;
+
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        @include media-sp {
+            display: none;
+        }
+
+        &--item {
+            font-size: 24px;
+            font-family: $font-mont;
+            font-weight: 400;
+            color: #fff;
+
+            &:hover {
+                font-weight: 700;
+            }
+
+        }
+    }
+
+    &__wallet {
+        padding: 10px 40px;
+        border-radius: 25px;
+        background: linear-gradient(270deg, #dec7ff 0%, #5c27fe 100%);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        p {
+            font-size: 16px;
+            font-family: $font-mont;
+            font-weight: normal;
+            color: #fff;
+
+            @include media-sm {
+                display: none;
+            }
+        }
+
+
+        @include media-sm {
+            padding: 5px 20px;
+        }
+    }
+
+}
+
+.c-footer {
+    width: 100%;
+    background-color: #070A29;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding: 20px 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-sm {
+            flex-direction: column;
+            padding: 20px;
+        }
+    }
+
+    &__items {
+        width: 70%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+
+        @include media-sm {
+            width: 100%;
+            padding-top: 20px;
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: left;
+
+        .__item--ttl {
+            font-size: 35px;
+            font-family: $font-palan;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: underline;
+
+            @include media-sm {
+                font-size: 20px;
+            }
+        }
+
+        .__item--links {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            gap: 10px;
+        }
+
+        .__item--link {
+            font-size: 16px;
+            font-family: $font-mont;
+            font-weight: normal;
+            color: #fff;
+
+            @include media-sm {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &_la {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-family: $font-mont;
+        font-weight: normal;
+        color: #fff;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+
+}
+
+////////////// Contact Form /////////////////////
+
+._error {
+    font-size: 14px;
+    font-family: $font-mont;
+    font-weight: normal;
+    color: #fff;
+
+   
+}
+
+.name__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.email__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.phone__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.disires__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.text__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.agree__error {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+////////////// Particle.js && Count animation /////////////
+.particle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+//////////// Count animation /////////////////////////////
+.timer {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+
+    @include media-sm {
+        font-size: 20px;
+    }
+
+    &::after {
+        content: "+";
+        position: absolute;
+        top: 0;
+        margin-left: 2px;
+    }
+}
+
+/////////////// Cookie Policy ////////////////////////////
+
+.Cookie-modal {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    gap: 20px;
+    z-index: 10;
+
+    &__ttl {
+        font-size: 30px;
+        font-family: $font-palan;
+        font-weight: 400;
+        color: #070A29;
+    }
+
+    &__subttl {
+        font-size: 16px;
+        font-family: $font-mont;
+        font-weight: normal;
+        color: #111;
+
+        @include media-sm {
+            width: 100%;
+        }
+
+    }
+
+    &__btngroup {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    &__link {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: $font-mont;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #070A29;
+        color: #fff;
+
+    }
+
+    &.is-active {
+        display: flex;
+    }
+    
+}
+

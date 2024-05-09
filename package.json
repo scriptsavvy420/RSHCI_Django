@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "npm run dev:css && npm run dev:js",
+    "dev:css": "tailwindcss -i static/tailwind/app.css -o static/css/style.css --watch",
+    "dev:js": "esbuild static/tailwind/app.js --bundle --sourcemap --outfile=static/dist/app.min.js --watch",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "tailwindcss -i static/tailwind/app.css -o static/css/style.css  --sourcemap",
+    "build:js": "esbuild static/tailwind/app.js --bundle --minify --sourcemap --outfile=static/js/app.min.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "esbuild": "^0.19.3",
+    "tw-elements": "^1.0.0"
+  }
+}

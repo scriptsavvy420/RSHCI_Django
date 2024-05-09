@@ -1,0 +1,24 @@
+/**
+* @file _common.scss
+**/
+
+
+.is-pc {
+    display: block;
+    @include media-sp {
+        display: none!important;
+    }
+}
+
+.is-sp {
+    display: none!important;
+    @include media-sp {
+        display: block!important;
+    }
+}
+
+.l-common {
+    max-width: 968px;
+    margin: 0 auto;   
+}
+

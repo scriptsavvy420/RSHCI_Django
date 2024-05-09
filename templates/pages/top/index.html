@@ -1,0 +1,310 @@
+{% extends "layout/base.html" %}
+{% load static%}
+
+{% block content %}
+
+
+<main class="p-main">
+    <div id="particles-js" class="particle"></div>
+    <section class="p-fv" id="home">
+        <div class="p-fv__container wow fadeInUp">
+            <div class="p-fv__content">
+                <h1 class="p-fv__content--ttl">Robusto Societe<br>
+                    Helvetia Capitale <br>Internationale</h1>
+                <p class="p-fv__content--subttl">
+                    We are in the process of acquiring our own full banking license, so we will comply with the law
+                    and create something completely new with huge potential.
+                    Reserve your RSHCI coins now.
+                </p>
+                <a href="#contact" class="p-fv__content--link">
+                    <span>Apply Here</span>
+                </a>
+                <div class="p-fv__content--num">
+                    <div class="__num-item" id="fun-fact">
+                            <span class="timer " data-to="1000 " data-speed="3000 "></span>
+                            <span class="__num-item_ttl">User</span>
+                    </div>
+                    <div class="__num-item" id="fun-fact">
+                        <span class="timer " data-to="100" data-speed="3000 "></span>
+                        <span class="__num-item_ttl">Teams</span>
+                    </div>
+                    <div class="__num-item" id="fun-fact">
+                        <span class="timer " data-to="30" data-speed="3000 "></span>
+                        <span class="__num-item_ttl">Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="p-fv__img">
+                <img src="{% static '/img/top/p-fv_bg.png'%}" alt="">
+            </figure>
+
+        </div>
+    </section>
+    <section class="p-about" id="about">
+        <div class="p-about__container wow fadeInUp">
+            <figure class="p-about__img">
+                <img src="{% static '/img/top/p-about.png'%}" alt="">
+            </figure>
+            <div class="p-about__content">
+                <p class="p-about__content--deco">
+                    About Us
+                </p>
+                <h1 class="p-about__content--ttl">
+                    Meet the<br>Visionaries Behind<br>RSHC Foundation
+                </h1>
+                <p class="p-about__content--subttl">RSHCI COIN is a central crypto currency limited to 1,000,000,000
+                    - 1 billion coins. Its value can only increase and cannot be manipulated downward through sales.
+                    The coin owners sell their coins on the open market and not back to us. We will sell the RSHCI
+                    through our own exchange and operate independently of all other‘s.</p>
+                <a href="http://rshcoin.com/RSHC-Whitepaper.pdf" class="p-about__content--link">
+                    <span>Read More</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="p-service" id="service">
+        <div class="p-service__container wow bounceInUp">
+            <p class="p-service__deco">Our Service</p>
+            <h1 class="p-service__ttl">Empowering YourOurExclusive Servicesfor your Dream</h1>
+            <p class="p-service__subttl">Our mission is simple yet profound: to create a robust, eco-friendly
+                ecosystem that empowers individuals and organizations to embrace clean energy solutions for a better
+                tomorrow.</p>
+            <div class="p-service__items">
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item1.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Blockchain Solutions</h1>
+                    <p class="__item-subttl">Transforming renewable energy with blockchain. Secure, transparent, and
+                        efficient transactions for a sustainable future. Explore our solutions today!</p>
+                </div>
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item2.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Real Estate Solutions</h1>
+                    <p class="__item-subttl">At RSHC Foundation, we offer comprehensive Real Estate Solutions
+                        designed to elevate properties to new heights of sustainability, efficiency, and value. </p>
+                </div>
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item3.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Hydrogen Technology
+                        Solutions</h1>
+                    <p class="__item-subttl">Services related to the use of hydrogen technology for renewable energy
+                        storage, transportation, and utilization.
+                    </p>
+                </div>
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item4.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Solar Energy Solutions</h1>
+                    <p class="__item-subttl">we're dedicated to harnessing the power of the sun to create clean,
+                        sustainable energy solutions for residential, commercial, and industrial properties. </p>
+                </div>
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item5.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Consulting and Advisory
+                        Services</h1>
+                    <p class="__item-subttl">Tailor consulting and advisory services to meet the specific needs and
+                        goals of each client, helping them navigate the transition to a more sustainable energy
+                        ecosystem.
+                    </p>
+                </div>
+                <div class="p-service__item">
+                    <span class="__item-img">
+                        <img src="{% static '/img/top/p-service_item6.png'%}" alt="">
+                    </span>
+                    <h1 class="__item-ttl">Research and Development</h1>
+                    <p class="__item-subttl">Offer research and development services to clients looking to leverage
+                        emerging technologies and stay at the forefront of sustainability trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="p-reason" id="reason">
+        <div class="p-reason__container wow bounceInUp">
+            <p class="p-reason__deco">Why Choose Us</p>
+            <h1 class="p-reason__ttl">We always There for you</h1>
+            <div class="p-reason__items">
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">Investment</h1>
+                        <p class="__item-content_subttl">your opportunity to become a part of our success with an investment of at least 10,000,000.- USD welcome Co. Owner of RSHC INT.</p>
+                    </div>
+                </div>
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">Hypothecs</h1>
+                        <p class="__item-content_subttl">We are offering top conditions for mortgages, private and businesses. Make your appointment to find out how much money you can save.</p>
+                    </div>
+                </div>
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">Cryptocurrencies</h1>
+                        <p class="__item-content_subttl">invest in our own crypto`s
+                            RSHC COIN
+                            Real Estate
+                            Solar energy
+                            Hydrogen Technology
+                            Renewable energy</p>
+                    </div>
+                </div>
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">Cryptocurrencies</h1>
+                        <p class="__item-content_subttl">invest in our own crypto`s PCGP
+                            Power Coin
+                            Groot & Panda,
+                            bamboo,
+                            natural products,
+                            detox for the whole body,
+                            seawater desalination,
+                            organic fashion.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">leasing</h1>
+                        <p class="__item-content_subttl">the best deals for
+
+                            car leasing
+                            
+                            all types of cars
+                            
+                            from 6 months to
+                            
+                            60 months
+                            
+                            Bentley, Rolls Royce, Mercedes, Audi, BMW, Mini Cooper,
+                            
+                            Volkswagen, Tesla, Toyota</p>
+                    </div>
+                </div>
+                <div class="p-reason__item">
+                    <figure class="__item-img">
+                        <img src="{% static '/img/top/p-reason-deco.png'%}" alt="">
+                    </figure>
+                    <div class="__item-content">
+                        <h1 class="__item-content_ttl">Car Rental</h1>
+                        <p class="__item-content_subttl">Car rental
+
+                            all-inclusive
+                            
+                            tires, inspection, insurance
+                            
+                            get your quote
+                            
+                            for your
+                            
+                            dream car, many
+                            
+                            brands available</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-reason_stategy">
+                <div class="__stategy-item" id="fun-fact">
+                    <span class="timer " data-to="1000 " data-speed="3000 "></span>
+                    <span class="__ttl">User</span>
+                </div>
+                <div class="__stategy-item" id="fun-fact">
+                    <span class="timer " data-to="100 " data-speed="3000 "></span>
+                    <span class="__ttl">Teams</span>
+                </div>
+                <div class="__stategy-item" id="fun-fact">
+                    <span class="timer " data-to="30" data-speed="3000 "></span>
+                    <span class="__ttl">Experiences</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="p-gold" id="gold">
+        <div class="p-gold__container wow bounceInUp">
+            <p class="p-gold__deco">Golden Age</p>
+            <h1 class="p-gold__ttl">Golden Age 24, the senior club</h1>
+            <p class="p-gold__subttl">Golden Age 24 is a vibrant and welcoming senior club dedicated to enhancing
+                the lives of older adults aged 60 and above. Our club provides a supportive and engaging community
+                where seniors can socialize, stay active, and pursue their passions in a welcoming and inclusive
+                environment.</p>
+            <a href="http://www.goldenage24.com" class="p-gold__link">GOLDEN AGE 24, APPLY NOW</a>
+        </div>
+    </section>
+    <section class="p-contact" id="contact">
+        <div class="p-contact__container wow fadeInUp">
+            <p class="p-contact__deco">Get in Touch!</p>
+            <h1 class="p-contact__ttl">Let’s Start Working
+                Together</h1>
+            <form class="p-contact__form" action="{% url 'homepage:send_mail' %}" id ="p-contact__form" method="post"> 
+                {% csrf_token %}
+                <div class="__form-info">
+                    <p class="__form-info_ttl">Contact information</p>
+                    <p class="__form-info_email">rshcint@gmail.com</p>
+                    <p class="__form-info_tel">Tel: 0049 15124242220</p>
+                    <figure class="__form-info_img">
+                        <img src="{% static '/img/top/crypto-bag.png'%}" alt="">
+                    </figure>
+                </div>
+                <div class="__form-items">
+                    <div class="__form-items_up">
+                        <div class="__form-item">
+                            <p class="__form-item_label">Your Name</p>
+                            <input type="text" class="__form-item_input" placeholder="Name" id="contact-name">
+                            <p class="_error name__error">Invalid Name. Please input your name</p>
+                        </div>
+                        <div class="__form-item">
+                            <p class="__form-item_label">Your Email</p>
+                            <input type="text" class="__form-item_input" placeholder="Email" id="contact-email">
+                            <p class="_error email__error">Invalid Email. Please input your email.</p>
+                        </div>
+                        <div class="__form-item">
+                            <p class="__form-item_label">Phone Number</p>
+                            <input type="text" class="__form-item_input" placeholder="Phone Number" id="contact-phone">
+                            <p class="_error phone__error">Invalid Phonenumber. Please input your Phone Number.</p>
+                        </div>
+                        <div class="__form-item">
+                            <p class="__form-item_label">Your disires</p>
+                            <input type="text" class="__form-item_input" placeholder="Your desires" id="contact-disires">
+                            <p class="_error disires__error">Invalid Value. Please input your type of disire.</p>
+                        </div>
+                    </div>
+                    <div class="__form-items_text">
+                        <p class="__text-label">Message</p>
+                        <Textarea class="__textarea" placeholder="Enter Message" id="contact-text"></Textarea>
+                        <p class="_error text__error">Invalid Text. Please input Text.</p>
+                    </div>
+                    <div class="__form-items_terms">
+                        <input type="checkbox" id="contact-check">
+                        <p class="__form-items_terms-ttl">Agree to the Terms of Use. Click <a href="terms_use.html">here</a> for more information.</p>
+                    </div>
+                    <p class="_error agree__error">Please agree terms of use.</p>
+                    <button class="__form-items_submit" id="submit">Send Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

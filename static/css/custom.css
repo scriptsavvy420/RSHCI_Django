@@ -1,0 +1,132 @@
+@font-face {
+    font-family: source;
+    src: url('../font/SourceHanSansJP-Normal.otf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-visual-bg {
+    background: url('../img/main-visual.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.main-visual-sm-bg {
+    background: url('../img/top-responsive.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.font-source {
+    font-family: 'source';
+}
+
+.font-mont{
+    font-family: "Montserrat","Kosugi","Noto Sans Japanese", sans-serif;
+}
+
+.bg-circle {
+    background: url('../img/circle.png');
+    background-size: 100% 100%;
+}
+
+.bg-blue-circle {
+    background: url('../img/blue-circle.png');
+    background-size: 100% 100%;
+}
+
+.text-orientation-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.trouble-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 65% 95%, 50% 100%, 35% 95%, 0 95%);
+}
+
+.main-swiper {
+    padding-bottom: 50px !important;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
+    border: 1px solid #111 !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #111 !important;
+}
+
+
+.recruitment-swiper {
+    padding-bottom: 50px !important;
+}
+
+.calendar-day {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 80px;
+    font-size: 16px;
+}
+
+.grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+
+.ceo-word-bg {
+    background: url('../img/ceo-word-bg.png');
+    background-position: center;
+    background-size: center center;
+    background-repeat: no-repeat;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.wow {
+    visibility: hidden;
+}
+
+@media (max-width: 992px) {
+    .main-visual-bg {
+        background: url('../img/main-visual.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+        
+    .calendar-day {
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 60px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-visual-bg {
+        background: url('../img/main-visual-sp.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: top center;
+    }
+    .calendar-day {
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 40px;
+        font-size: 14px;
+    }
+}
