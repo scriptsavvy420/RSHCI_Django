@@ -8,18 +8,7 @@ from .models import *
 
 
 
-############################## TOP PAGE ##############################
-# def homepage(request):
-#     template = loader.get_template('pages/top/index.html')
-
-#     try:
-#         customer_voices = CustomerVoice.objects.all()
-#         canonical_url = "https://www.careerxrosspoint.com"
-#         return render(request,'pages/top/index.html',{"customer_voices": customer_voices,'canonical_url': canonical_url})
-#     except Exception as error:
-#         print(str(error))
-
-#     return HttpResponse(template.render())       
+############################## TOP PAGE ##############################      
 
 def homepage(request):
     template = loader.get_template("pages/top/index.html")
@@ -48,6 +37,30 @@ def terms(request):
     except Exception as error:
         print(str(error))
     return HttpResponse(template.render())
+
+############################## Login Page ############################
+
+def login(request):
+    template = loader.get_template("pages/login/index.html")
+
+    try:
+        return render(request, "pages/login/index.html")
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+
+############################## Login API ############################
+
+############################## Wallet Page ############################
+def wallet(request):
+    template = loader.get_template("pages/wallet/index.html")
+
+    try:
+        return render(request, "pages/wallet/index.html")
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+############################## Wallet API ############################
 
 ############################## MAIL API ##############################
 def send_mail(request):

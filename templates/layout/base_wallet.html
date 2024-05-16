@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/hompage/style.css'%}">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>RSHCI Wallet</title>
+</head>
+
+<body>
+    <header class="l-header"></header>
+    <div id="particles-js" class="particle"></div>
+    {% block content %} {% endblock %}
+    <footer class="l-footer"></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static '/js/homepage/particle.js'%}"></script>
+    {% block wallet-javascript%} {% endblock %}
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@
 @import './reset';
 @import './c-component';
 
+
 .p-main {
     width: 100%;
 }
@@ -961,6 +962,7 @@
         @include media-sm {
             font-size: 35px;
         }
+
         @include media-xs {
             font-size: 28px;
         }
@@ -1002,5 +1004,720 @@
             font-size: 16px;
         }
 
+    }
+}
+
+////////////// Wallet Page ///////////////////////////
+.w-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #070A29;
+}
+
+.w-wallet {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+
+    &__container {
+        width: 100%;
+        background-color: #1111115d;
+        border: 2px solid #ffffff52;
+        border-radius: 10px;
+        padding: 30px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__ttl {
+        font-size: 40px;
+        font-family: $font-noto;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+    &__subttl {
+        font-size: 16px;
+        font-family: $font-noto;
+        font-weight: normal;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+    &__symbol {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 150px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-btn {
+
+            width: 300px;
+            padding: 10px 40px;
+            background: linear-gradient(270deg, #dec7ff 0%, #5c27fe 100%);
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+
+        &-item {
+            width: 100%;
+            font-size: 20px;
+            font-family: $font-mont;
+            font-weight: 400;
+            color: #fff;
+        }
+    }
+
+    &__senditems {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        &.hidden {
+            display: none;
+        }
+
+        &-to {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            gap: 10px;
+        }
+
+        &-amount {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            gap: 10px;
+        }
+
+        .__send-ttl {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: $font-mont;
+            color: #fff;
+        }
+
+        .__send-input {
+            background-color: #5555555d;
+            border: 1px solid #ffffff2f;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    }
+}
+
+////////////// Wallet Login Page ////////////////////
+.l-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #070A29;
+}
+
+.l-login {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+
+    @include media-xs {
+        padding: 10px;
+    }
+
+    &__container {
+
+        width: 100%;
+        background-color: #1111115d;
+        border: 2px solid #ffffff52;
+        border-radius: 10px;
+        padding: 30px 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include media-sm {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 30px 10px 20px 10px;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &--ttl {
+            font-size: 40px;
+            font-family: $font-noto;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #fff;
+            padding-bottom: 30px;
+        }
+
+        &--subttl {
+            font-size: 14px;
+            font-family: $font-mont;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+        }
+
+        &--item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 10px;
+
+            @include media-xs {
+                padding: 0;
+            }
+        }
+
+        &--input {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #5555555d;
+            border: 1px solid #1111115d;
+            color: #fff;
+        }
+
+        &--submit {
+            width: 300px;
+            padding: 10px 40px;
+            background: linear-gradient(270deg, #dec7ff 0%, #5c27fe 100%);
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            @include media-xs {
+                width: 270px;
+            }
+        }
+    }
+
+    .sm {
+
+        @include media-sm {
+            display: none;
+        }
+    }
+
+}
+
+////////////// Admin Page //////////////////////////
+
+.a-wrapper {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #222E3C;
+    max-height: 100vh;
+}
+
+.sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    max-height: 100vh;
+    min-height: 100vh;
+    padding: 30px;
+    transition: margin-left .35s ease-in-out, left .35s ease-in-out, margin-right .35s ease-in-out, right .35s ease-in-out;
+    direction: ltr;
+    background: #222E3C;
+    @include media-sm {
+        display: none;
+    }
+
+    &-content {
+        transition: margin-left .35s ease-in-out, left .35s ease-in-out, margin-right .35s ease-in-out, right .35s ease-in-out;
+        display: flex;
+        // height: 100vh;
+        flex-direction: column;
+        background: #222E3C;
+    }
+
+    &-nav {
+        max-height: 80vh;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        flex-grow: 1;
+    }
+
+    &-link {
+        display: block;
+        padding: .625rem 1.625rem;
+        font-weight: 400;
+        transition: background .1s ease-in-out;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        border-left-style: solid;
+        border-left-width: 3px;
+        color: rgba(#e9ecef, 0.5);
+        background: #222E3C;
+        border-left-color: transparent;
+
+        i,
+        svg {
+            margin-right: .75rem;
+            color: rgba(#e9ecef, 0.5);
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:hover {
+            color: rgba(#e9ecef, 0.75);
+            background: #222E3C;
+            border-left-color: transparent;
+        }
+
+
+    }
+
+    &-item {
+        &.active {
+            color: rgba(#e9ecef, 0.75);
+            background: #222E3C;
+            border-left-color: transparent;
+        }
+    }
+
+    &-brand {
+        font-weight: 700;
+        font-size: 1.15rem;
+        padding: 1.15rem 1.5rem;
+        display: block;
+        color: #f8f9fa;
+
+        &:hover {
+            text-decoration: none;
+            color: #f8f9fa;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+}
+
+.a-main {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    transition:  transform .25s ease-out;
+    background: #f5f7fb;
+    flex-direction: column;
+}
+
+.a-header {
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 5px 5px rgba(7, 7, 7, 0.144);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__ttl {
+        font-size: 40px;
+        font-family: $font-palan;
+        font-weight: 500;
+        color: #555;
+
+        @include media-sm {
+            font-size: 30px;
+        }
+    }
+}
+
+.a-content {
+    width: 100%;
+    height: calc(100vh - 130px);
+    background-color: rgba(7, 7, 7, 0.048);
+    overflow: scroll;
+    scrollbar-width: thin;
+    padding: 50px 20px 50px 50px;
+    @include media-sm {
+        padding: 20px;
+    }
+
+    &__ttl {
+        font-size: 24px;
+        font-weight: 500;
+        font-family: $font-noto;
+        color: #000;
+    }
+
+    &__item {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        
+    }
+
+    &__analytics {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+
+        .analytics-item {
+            width: 100%;
+            height: 135px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px 10px;
+            box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+
+            &.users {
+                background-color: #e9c242;
+            }
+
+            &.total {
+                background-color: #1ca099;
+            }
+
+            &.price {
+                background-color: #8f33a1;
+            }
+
+            &.sales {
+                background-color: #4a48d6;
+            }
+        }
+
+        .__analytics-ttl {
+            font-size: 30px;
+            font-family: $font-mont;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .__analytics-subttl {
+            font-size: 14px;
+            font-family: $font-mont;
+            font-weight: normal;
+            color: #fff;
+        }
+    }
+
+    &__userinfo {
+        width: 100%;
+        height: 290px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #fff;
+        box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+        padding: 20px 10px;
+
+        .__userinfo-ttl {
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 500;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+        }
+
+        .__userinfo-body {
+            width: 100%;
+            height: 100%;
+            padding: 20px 0;
+
+            .userinfo-table {
+                width: 100%;
+                th {
+                    padding: 10px;
+                    border-bottom: 1px solid #555;
+                }
+                td {
+                    text-align: center;
+                    padding: 10px;
+                }
+            }
+        }
+
+    }
+
+    &__calender {
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #fff;
+        box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+        padding: 20px 10px;
+
+        .__calender-ttl {
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 500;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+        }
+    }
+
+    &__location {
+        width: 100%;
+        height: 365px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #fff;
+        box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+        padding: 20px 10px;
+
+        .__location-ttl {
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 500;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+        }
+    }
+
+    &__circlechart {
+        width: 100%;
+        max-width: 300px;
+        height: 365px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #fff;
+        box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+        padding: 20px 10px;
+
+        .__circlechart-ttl {
+            font-size: 16px;
+            font-family: $font-noto;
+            font-weight: 500;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+        }
+    }
+
+    &__wallet {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-color: #070a29;
+            box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
+            padding: 30px 10px;
+
+            .__ttl {
+                font-size: 40px;
+                font-family: $font-noto;
+                font-weight: 700;
+                line-height: 1.5;
+                color: #fff;
+                text-align: center;
+            }
+
+            .__content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                
+
+                .__user-name {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    &__ttl {
+                        font-size: 16px;
+                        font-family: $font-mont;
+                        font-weight: normal;
+                        color: #fff;
+                    }
+
+                    &__input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+                        background-color: #5555552a;
+                        color: #fff;
+                    }
+                }
+
+                .__wallet-address {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    &__ttl {
+                        font-size: 16px;
+                        font-family: $font-mont;
+                        font-weight: normal;
+                        color: #fff;
+                    }
+
+                    &__input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+                        background-color: #5555552a;
+                        color: #fff;
+                    }
+                }
+
+                .__wallet-secret {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    &__ttl {
+                        font-size: 16px;
+                        font-family: $font-mont;
+                        font-weight: normal;
+                        color: #fff;
+                    }
+
+                    &__input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+                        background-color: #5555552a;
+                    }
+                }
+            }
+
+            .__link {
+                padding: 10px 40px;
+                border-radius: 25px;
+                background: linear-gradient(270deg, #dec7ff 0%, #5c27fe 100%);
+                font-size: 16px;
+                font-family: $font-mont;
+                font-weight: normal;
+                color: #fff;
+        
+                @include media-xs {
+                    font-size: 12px;
+                } 
+            }
+        }
+        
+        
+    }
+
+}
+
+.a-footer {
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px -5px 5px rgba(7, 7, 7, 0.144);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__sttl {
+        font-size: 16px;
+        font-family: $font-palan;
+        font-weight: 500;
+        color: #555;
     }
 }

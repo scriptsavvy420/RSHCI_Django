@@ -1,0 +1,142 @@
+{% extends "layout/base_admin.html" %}
+{% load static%}
+
+{% block main %}
+<main class="a-content">
+    <h3 class="a-content__ttl">Analytics Dashboard</h3>
+    <div class="a-content__item">
+        <div class="a-content__analytics">
+            <div id="__users" class="analytics-item users">
+                <h1 class="__analytics-ttl">Users</h1>
+                <p class="__analytics-subttl">1090</p>
+            </div>
+            <div id="__totalcount" class="analytics-item total">
+                <h1 class="__analytics-ttl">Total Coin</h1>
+                <p class="__analytics-subttl">100,000,000</p>
+            </div>
+            <div id="__coinprice" class="analytics-item price">
+                <h1 class="__analytics-ttl">Coin Price</h1>
+                <p class="__analytics-subttl">5.6€</p>
+            </div>
+            <div id="__currentcoin" class="analytics-item sales">
+                <h1 class="__analytics-ttl">Sales Coin</h1>
+                <p class="__analytics-subttl">0.00,005</p>
+            </div>
+        </div>
+        <div class="a-content__userinfo">
+            <h4 class="__userinfo-ttl">Users Info</h4>
+            <div class="__userinfo-body">
+                <table class="userinfo-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Wallet Address</th>
+                            <th>Secret Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Yoshida</td>
+                            <td>0x567890ghjkl7dje</td>
+                            <td>elekdisejdm234jejs</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Michael</td>
+                            <td>0x567890ghjkl7dje</td>
+                            <td>elekdisejdm234jejs</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Yoshida</td>
+                            <td>0x567890ghjkl7dje</td>
+                            <td>elekdisejdm234jejs</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Yoshida</td>
+                            <td>0x567890ghjkl7dje</td>
+                            <td>elekdisejdm234jejs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="a-content__item">
+        <div class="a-content__calender">
+            <h4 class="__calender-ttl">Calender</h4>
+            <div class="__calender-body">
+
+                <div class="wrapper">
+
+                    <div class="container-calendar">
+                        <h3 id="monthAndYear"></h3>
+
+                        <div class="button-container-calendar">
+                            <button id="previous" onclick="previous()">&#8249;</button>
+                            <button id="next" onclick="next()">&#8250;</button>
+                        </div>
+
+                        <table class="table-calendar" id="calendar" data-lang="en">
+                            <thead id="thead-month"></thead>
+                            <tbody id="calendar-body"></tbody>
+                        </table>
+
+                        <div class="footer-container-calendar">
+                            <label for="month">Jump To: </label>
+                            <select id="month" onchange="jump()">
+                                <option value=0>Jan</option>
+                                <option value=1>Feb</option>
+                                <option value=2>Mar</option>
+                                <option value=3>Apr</option>
+                                <option value=4>May</option>
+                                <option value=5>Jun</option>
+                                <option value=6>Jul</option>
+                                <option value=7>Aug</option>
+                                <option value=8>Sep</option>
+                                <option value=9>Oct</option>
+                                <option value=10>Nov</option>
+                                <option value=11>Dec</option>
+                            </select>
+                            <select id="year" onchange="jump()"></select>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="a-content__location">
+            <h4 class="__location-ttl">Location</h4>
+            <div class="__location-body">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="a-content__circlechart">
+            <h4 class="__circlechart-ttl">Coin Usage</h4>
+            <div class="__circlechart-body">
+                <div class="__circlechart-body_chart">
+                    <canvas id="admin-circlechart"></canvas>
+                </div>
+                <table class="__circlechart-body_table">
+                    <tbody>
+                        <tr>
+                            <td>Total</td>
+                            <td>100,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Sales Coin</td>
+                            <td>50003</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout/base_wallet.html" %}
+{% load static%}
+
+{% block content %}
+<main class="w-main">
+
+    <section class="w-wallet">
+        <div class="w-wallet__container">
+            <h1 class="w-wallet__ttl">RSHCI Wallet</h1>
+            <p class="w-wallet__subttl">Address:0x23456789ghjkl456789</p>
+            <figure class="w-wallet__symbol">
+                <img src="./assets/img/wallet-img.jpg" alt="">
+            </figure>
+            <div class="w-wallet__content">
+
+                <div class="w-wallet__wrap">
+                    <p class="w-wallet__wrap-item">Owner:Yoshida</p>
+                    <p class="w-wallet__wrap-item">Amount:0.002</p>
+                    <p class="w-wallet__wrap-item">Phone:031-1234-5678</p>
+                    <p class="w-wallet__wrap-item">Coin Price:5.6€</p>
+                </div>
+                <div class="w-wallet__senditems hidden" id="senditems">
+                    <div class="w-wallet__senditems-to">
+                        <p class="__send-ttl">Received Address:</p>
+                        <input type="text" class="__send-input" placeholder="Enter Wallet address">
+                    </div>
+                    <div class="w-wallet__senditems-amount">
+                        <p class="__send-ttl">Amount:</p>
+                        <input type="text" class="__send-input" placeholder="Enter the amount of coin">
+                    </div>
+                </div>
+                <a id="send" class="w-wallet__content-btn">Send</a>
+                <a href="" id="confirm" class="w-wallet__content-btn hidden">Confirm</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block wallet-javascript%}
+<script>
+    $(document).ready(function () {
+        $('#send').click(function () {
+            $(this).addClass('hidden');
+            $('#confirm').removeClass('hidden');
+            $('#senditems').removeClass('hidden');
+        });
+    });
+</script>
+{% endblock %}
