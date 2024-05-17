@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 import datetime
 
 from .models import *
+import random
 
 
 
@@ -50,7 +51,15 @@ def login(request):
     return HttpResponse(template.render())
 
 ############################## Login API ############################
+def login_wallet(request):
+    address = request.POST.get('walletAddress')
+    secret = request.POST.get('secretCode')
 
+    wallet = Wallet.objects.filter(address = address)
+
+    if secret == wallet.secretcode:
+        return redirect('/wallet')
+    return redirect('/login')
 ############################## Wallet Page ############################
 def wallet(request):
     template = loader.get_template("pages/wallet/index.html")
@@ -61,6 +70,67 @@ def wallet(request):
         print(str(error))
     return HttpResponse(template.render())
 ############################## Wallet API ############################
+def generate_address(length=40):
+    # Generate a random OTP of specified length
+    digits = "0123456789abcdf"
+    address = "".join(random.choice(digits) for _ in range(length))
+    return address
+def generate_otp(length=40):
+    # Generate a random OTP of specified length
+    digits = "0123456789abcdf"
+    otp = "".join(random.choice(digits) for _ in range(length))
+    return otp
+
+def create_wallet(request):
+    if request.method == "POST":
+        owner = request.POST.get('userName')
+        print(owner)
+
+        try:
+
+            address = generate_address()
+            otp = generate_otp()
+
+            Wallet.objects.create(owner=owner,address=address,secretcode=otp)
+
+            return JsonResponse(
+                {
+                    "address":address,
+                    "otp":otp
+                },status = 200
+            )
+        except Exception as error:
+            print(str(error))
+
+    return JsonResponse("Method Not Allowed", status=405)    
+############################## Admin Page ############################
+def admin(request):
+    template = loader.get_template("pages/admin/dashboard/index.html")
+
+    try:
+        return render(request, "pages/admin/dashboard/index.html")
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+
+def user_manage(request):
+    template = loader.get_template("pages/admin/usermanagement/index.html")
+
+    try:
+        return render(request, "pages/admin/usermanagement/index.html")
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+
+def wallet_manage(request):
+    template = loader.get_template("pages/admin/walletmanagement/index.html")
+
+    try:
+        return render(request, "pages/admin/walletmanagement/index.html")
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+############################## Admin API ############################
 
 ############################## MAIL API ##############################
 def send_mail(request):

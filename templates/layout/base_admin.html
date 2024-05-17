@@ -28,23 +28,12 @@
 </head>
 
 <body>
-    <div class="a-wrapper">
-        {% block navbar%} {% endblock%}
+    {% block content%} {% endblock%}
 
-        <div class="a-main">
-            <header class="a-header">
-                <p class="a-header__ttl">RSHCI Management</p>
-            </header>
-            {% block main%} {% endblock%}
-            <footer class="a-footer">
-                <p class="a-footer__sttl">RSHCI@reserved in 2024.5</p>
-            </footer>
-        </div>
-        
-    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/jsvectormap"></script>
     <script src="https://unpkg.com/jsvectormap/dist/maps/world-merc.js"></script>
-
+    {% block javascript %}{% endblock %}
     <script>
         function generate_year_range(start, end) {
             var years = "";

@@ -2123,6 +2123,7 @@ body {
   border: 1px solid #555;
   border-radius: 5px;
   background-color: rgba(85, 85, 85, 0.1647058824);
+  color: #fff;
 }
 .a-content__wallet-container .__link {
   padding: 10px 40px;

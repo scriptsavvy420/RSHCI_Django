@@ -10,3 +10,6 @@ from .models import *
 # admin.site.register(KnowhowCategory)
 # admin.site.register(Knowhow)
 # admin.site.register(Consultation)
+
+admin.site.register(CoinUsers)
+admin.site.register(Wallet)

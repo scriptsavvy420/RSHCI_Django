@@ -4,7 +4,8 @@
 {% block content %}
 <main class="l-main">
     <section class="l-login">
-        <div class="l-login__container">
+        <form class="l-login__container" action="{% url 'homepage:login_wallet'%}" method="POST">
+            {% csrf_token %}
             <div class="l-login__wrap">
                 <h1 class="l-login__wrap--ttl">Sign In</h1>
                 <div class="l-login__wrap--item">
@@ -19,7 +20,7 @@
                 </div>
 
                 <p class="l-login__wrap--subttl">Forgot Your Secret Code?</p>
-                <a href="" class="l-login__wrap--submit">Sign In</a>
+                <a href="" id="submit" class="l-login__wrap--submit">Sign In</a>
             </div>
             <div class="l-login__wrap sm">
                 <figure class="l-login__wrap--img">
@@ -27,9 +28,56 @@
                 </figure>
 
             </div>
-        </div>
+        </form>
     </section>
 
 </main>
 
+{% endblock %}
+
+{% block javascript %}
+<script>
+   $("#submit").click(function(e){
+        e.preventDefault()
+
+        var walletaddress = $("#walletaddress").val()
+        var secretcode = $("#secretcode").val()
+
+        var success = true
+        if(user_name == ""){
+            $(".name__error").addClass("is-active")
+            success = false
+        }
+        
+        if(success){
+            
+            const form = document.getElementById('a-content__wallet');
+            const formData = new FormData(form);
+
+            fetch("{% url 'homepage:create_wallet' %}", {
+                method: 'POST',
+                body: formData
+            })
+            .then((response) => {
+                if(!response.ok){
+                    alert("Server Error. Please retry again later.") 
+                }
+                return response.json();
+                
+            })
+            .then(data => {
+                
+                $(".__wallet-address__input").val(data.address);
+                $(".__wallet-secret__input").val(data.otp);
+                alert("New Wallet has been successfully create") 
+            })
+            .catch((error) => {
+                alert("Failed to create wallet due to server error. Please try again later.")
+                console.log(error)
+            });
+        }
+
+        
+    }) 
+</script>
 {% endblock %}
