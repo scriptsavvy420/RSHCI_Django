@@ -278,14 +278,6 @@ body {
     padding: 20px;
   }
 }
-.c-footer__logo {
-  max-width: 150px;
-}
-.c-footer__logo img {
-  max-width: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .c-footer__items {
   width: 70%;
   max-width: 800px;
