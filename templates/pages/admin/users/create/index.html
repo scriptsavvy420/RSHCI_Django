@@ -1,0 +1,86 @@
+{% extends "layout/base_admin.html" %}
+{% load static%}
+
+{% block content %}
+
+<div class="a-wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a href="" class="sidebar-brand">
+                <span class="align-middle">RSHCI</span>
+            </a>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" href="/admin/dashboard">
+                        <i class="align-middle" data-feather="sliders"></i><span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users/list">
+                        <i class="align-middle" data-feather="user"></i><span class="align-middle">User Info</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users/create">
+                        <i class="align-middle" data-feather="sliders"></i><span class="align-middle">Create
+                            Wallet</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="a-main">
+        <header class="a-header">
+            <p class="a-header__ttl">RSHCI Management</p>
+        </header>
+        <main class="a-content">
+            <form class="a-content__wallet" method="POST">
+                {% csrf_token %}
+                <div class="a-content__wallet-container">
+                    <h1 class="__ttl">Create New</h1>
+                    {% if form.non_field_errors %}
+                    <p class="__subttl">
+                        {{form.non_field_errors}}
+                    </p>
+                    {% endif %}
+                    {% if messages %}
+
+                        {% for message in messages %}
+                            <p class="__success">
+                                {{ message }}
+                            </p>     
+                        {% endfor %}
+
+                    {% endif %}
+                    <div class="__content">
+                        <div class="__user-name">
+                            <p class="__user-name__ttl">User Name</p>
+                            <input type="text" class="__user-name__input" id="userName" name="name"
+                                placeholder="User Name" value="{{form.name.value}}">
+
+                        </div>
+                        <div class="__user-email">
+                            <p class="__user-email__ttl">User Email</p>
+                            <input type="text" class="__user-email__input" id="userName" name="email"
+                                placeholder="User Email" value="{{form.email.value}}">
+
+                        </div>
+                        
+                    </div>
+                    <button class="__link" type="submit">Generate Wallet</button>
+
+                </div>
+            </form>
+
+        </main>
+        <footer class="a-footer">
+            <p class="a-footer__sttl">RSHCI@reserved in 2024.5</p>
+        </footer>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout/base_admin.html" %}
+{% load static%}
+
+{% block content %}
+
+<div class="a-wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a href="" class="sidebar-brand">
+                <span class="align-middle">RSHCI</span>
+            </a>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" href="/admin/dashboard">
+                        <i class="align-middle" data-feather="sliders"></i><span
+                            class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users/list">
+                        <i class="align-middle" data-feather="user"></i><span class="align-middle">User Info</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users/create">
+                        <i class="align-middle" data-feather="sliders"></i><span class="align-middle">Create
+                            Wallet</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="a-main">
+        <header class="a-header">
+            <p class="a-header__ttl">RSHCI Management</p>
+        </header>
+        <main class="a-content">
+            <div class="a-content__item">
+                
+                <div class="a-content__userinfo">
+                    <div class="__userinfo-head">
+                        <h4 class="__userinfo-ttl">Users Info</h4>
+                        <a href="/admin/users/create" class="__userinfo-createbtn">Create New</a>
+                    </div>
+                    <div class="__userinfo-body">
+                        <table class="userinfo-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Wallet Address</th>
+                                    <th>Secret Code</th>
+                                    <th>Coins</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.username}}</td>
+                                        <td>{{user.secretcode}}</td>
+                                        <td>{{user.coins}}</td>
+                                        <td>
+                                            <a href="/admin/users/{{user.id}}" class="__userinfo-update">Update</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <footer class="a-footer">
+            <p class="a-footer__sttl">RSHCI@reserved in 2024.5</p>
+        </footer>
+        
+    </div>
+    
+</div>
+
+
+{% endblock %}
+

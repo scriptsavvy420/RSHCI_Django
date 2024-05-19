@@ -278,6 +278,14 @@ body {
     padding: 20px;
   }
 }
+.c-footer__logo {
+  max-width: 200px;
+}
+.c-footer__logo img {
+  max-width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .c-footer__items {
   width: 70%;
   max-width: 800px;
@@ -1107,6 +1115,7 @@ body {
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+  line-height: 1.5;
   color: #fff;
   text-align: center;
 }
@@ -1558,6 +1567,14 @@ body {
   line-height: 1.5;
   color: #fff;
 }
+.w-wallet .__success {
+  padding-top: 20px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  text-align: center;
+  max-width: 400px;
+}
 .w-wallet__symbol {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1690,6 +1707,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 .l-login__wrap--ttl {
   font-size: 40px;
@@ -1834,6 +1852,7 @@ body {
 }
 
 .a-main {
+  position: relative;
   display: flex;
   width: 100%;
   min-width: 0;
@@ -1936,7 +1955,6 @@ body {
 }
 .a-content__userinfo {
   width: 100%;
-  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1945,13 +1963,31 @@ body {
   box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
   padding: 20px 10px;
 }
-.a-content__userinfo .__userinfo-ttl {
+.a-content__userinfo .__userinfo-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.a-content__userinfo .__userinfo-head .__userinfo-ttl {
   font-size: 16px;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   line-height: 1.8;
   color: #555;
   text-align: left;
+}
+.a-content__userinfo .__userinfo-head .__userinfo-createbtn {
+  text-align: center;
+  width: 150px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #061faa;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #fff;
 }
 .a-content__userinfo .__userinfo-body {
   width: 100%;
@@ -1968,6 +2004,17 @@ body {
 .a-content__userinfo .__userinfo-body .userinfo-table td {
   text-align: center;
   padding: 10px;
+}
+.a-content__userinfo .__userinfo-update {
+  background-color: #33ad28;
+  width: 100px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 5px;
 }
 .a-content__calender {
   width: 100%;
@@ -2034,8 +2081,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 .a-content__wallet-container {
+  position: relative;
   width: 100%;
   max-width: 600px;
   display: flex;
@@ -2053,6 +2102,22 @@ body {
   font-weight: 700;
   line-height: 1.5;
   color: #fff;
+  text-align: center;
+}
+.a-content__wallet-container .__subttl {
+  font-size: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #f1a7a7;
+  text-align: center;
+}
+.a-content__wallet-container .__success {
+  font-size: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #33ad28;
   text-align: center;
 }
 .a-content__wallet-container .__content {
@@ -2076,6 +2141,48 @@ body {
   color: #fff;
 }
 .a-content__wallet-container .__content .__user-name__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: rgba(85, 85, 85, 0.1647058824);
+  color: #fff;
+}
+.a-content__wallet-container .__content .__user-email {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.a-content__wallet-container .__content .__user-email__ttl {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  color: #fff;
+}
+.a-content__wallet-container .__content .__user-email__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: rgba(85, 85, 85, 0.1647058824);
+  color: #fff;
+}
+.a-content__wallet-container .__content .__user-coins {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.a-content__wallet-container .__content .__user-coins__ttl {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  color: #fff;
+}
+.a-content__wallet-container .__content .__user-coins__input {
   width: 100%;
   padding: 10px;
   border: 1px solid #555;
@@ -2138,6 +2245,12 @@ body {
   .a-content__wallet-container .__link {
     font-size: 12px;
   }
+}
+.a-content__wallet-container .close-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 30px;
+  right: 30px;
 }
 
 .a-footer {

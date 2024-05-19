@@ -560,6 +560,7 @@
                 font-size: 14px;
                 font-family: $font-mont;
                 font-weight: 300;
+                line-height: 1.5;
                 color: #fff;
                 text-align: center;
             }
@@ -1052,7 +1053,14 @@
         line-height: 1.5;
         color: #fff;
     }
-
+    .__success{
+        padding-top: 20px;
+        font-size: 12px;
+        font-family: $font-mont;
+        color: #fff;
+        text-align: center;
+        max-width: 400px;
+    }
     &__symbol {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -1198,6 +1206,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
 
         &--ttl {
             font-size: 40px;
@@ -1365,6 +1374,7 @@
 }
 
 .a-main {
+    position: relative;
     display: flex;
     width: 100%;
     min-width: 0;
@@ -1476,7 +1486,6 @@
 
     &__userinfo {
         width: 100%;
-        height: 290px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1485,14 +1494,36 @@
         box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.144);
         padding: 20px 10px;
 
-        .__userinfo-ttl {
-            font-size: 16px;
-            font-family: $font-noto;
-            font-weight: 500;
-            line-height: 1.8;
-            color: #555;
-            text-align: left;
+
+        .__userinfo-head {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .__userinfo-ttl {
+                font-size: 16px;
+                font-family: $font-noto;
+                font-weight: 500;
+                line-height: 1.8;
+                color: #555;
+                text-align: left;
+            }
+
+            .__userinfo-createbtn {
+                text-align: center;
+                width: 150px;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: #061faa;
+                font-size: 16px;
+                font-family: $font-mont;
+                font-weight: 500;
+                color: #fff;
+            }
         }
+        
 
         .__userinfo-body {
             width: 100%;
@@ -1510,6 +1541,18 @@
                     padding: 10px;
                 }
             }
+        }
+
+        .__userinfo-update {
+            background-color: #33ad28;
+            width: 100px;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 14px;
+            font-family: $font-mont;
+            font-weight: 400;
+            color: #fff;
+            border-radius: 5px;
         }
 
     }
@@ -1579,13 +1622,19 @@
     }
 
     &__wallet {
+        
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 10;
+
+        
+
         &-container {
+            position: relative;
             width: 100%;
             max-width: 600px;
             display: flex;
@@ -1606,6 +1655,24 @@
                 text-align: center;
             }
 
+            .__subttl {
+                font-size: 16px;
+                font-family: $font-noto;
+                font-weight: 300;
+                line-height: 1.5;
+                color: #f1a7a7;
+                text-align: center;
+            }
+
+            .__success {
+                font-size: 16px;
+                font-family: $font-noto;
+                font-weight: 300;
+                line-height: 1.5;
+                color: #33ad28;
+                text-align: center;
+            }
+
             .__content {
                 width: 100%;
                 display: flex;
@@ -1615,6 +1682,53 @@
                 
 
                 .__user-name {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    &__ttl {
+                        font-size: 16px;
+                        font-family: $font-mont;
+                        font-weight: normal;
+                        color: #fff;
+                    }
+
+                    &__input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+                        background-color: #5555552a;
+                        color: #fff;
+                    }
+                }
+
+                .__user-email {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    &__ttl {
+                        font-size: 16px;
+                        font-family: $font-mont;
+                        font-weight: normal;
+                        color: #fff;
+                    }
+
+                    &__input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+                        background-color: #5555552a;
+                        color: #fff;
+                    }
+                }
+                .__user-coins {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -1697,6 +1811,13 @@
                 @include media-xs {
                     font-size: 12px;
                 } 
+            }
+
+            .close-btn {
+                position: absolute;
+                cursor: pointer;
+                top: 30px;
+                right: 30px;
             }
         }
         

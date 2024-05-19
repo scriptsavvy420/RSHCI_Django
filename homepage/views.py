@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from django.contrib.auth import authenticate, logout, login
+from django.contrib.auth.decorators import user_passes_test
+from utils.middlewares import *
 from django.template import loader
 from django.shortcuts import redirect
+from homepage.forms import ClientLoginForm,ClientWalletForm
+from .models import *
+from django.contrib import messages
 import datetime
 
-from .models import *
-import random
 
 
 
@@ -41,96 +45,64 @@ def terms(request):
 
 ############################## Login Page ############################
 
-def login(request):
-    template = loader.get_template("pages/login/index.html")
-
-    try:
-        return render(request, "pages/login/index.html")
-    except Exception as error:
-        print(str(error))
-    return HttpResponse(template.render())
-
-############################## Login API ############################
-def login_wallet(request):
-    address = request.POST.get('walletAddress')
-    secret = request.POST.get('secretCode')
-
-    wallet = Wallet.objects.filter(address = address)
-
-    if secret == wallet.secretcode:
-        return redirect('/wallet')
-    return redirect('/login')
-############################## Wallet Page ############################
-def wallet(request):
-    template = loader.get_template("pages/wallet/index.html")
-
-    try:
-        return render(request, "pages/wallet/index.html")
-    except Exception as error:
-        print(str(error))
-    return HttpResponse(template.render())
-############################## Wallet API ############################
-def generate_address(length=40):
-    # Generate a random OTP of specified length
-    digits = "0123456789abcdf"
-    address = "".join(random.choice(digits) for _ in range(length))
-    return address
-def generate_otp(length=40):
-    # Generate a random OTP of specified length
-    digits = "0123456789abcdf"
-    otp = "".join(random.choice(digits) for _ in range(length))
-    return otp
-
-def create_wallet(request):
+def client_login(request):
     if request.method == "POST":
-        owner = request.POST.get('userName')
-        print(owner)
+        form = ClientLoginForm(request.POST)
 
-        try:
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
 
-            address = generate_address()
-            otp = generate_otp()
+            user = authenticate(username=username,password=password)
+            if user is not None:
+                m_user = User.objects.get(username=username)
+                login(request,user)
+                url = f"/wallet/{m_user.id}"
+                return redirect(url)
+            else:
+                logout(request)
+                form.non_field_errors = "Login failed.Make sure your wallet address and password are correct."
 
-            Wallet.objects.create(owner=owner,address=address,secretcode=otp)
+        else:
+            print(form.errors)
+    else:
+        form = ClientLoginForm()
 
-            return JsonResponse(
-                {
-                    "address":address,
-                    "otp":otp
-                },status = 200
-            )
-        except Exception as error:
-            print(str(error))
+    return render(request,"pages/login/index.html",{"form":form})       
+        
 
-    return JsonResponse("Method Not Allowed", status=405)    
-############################## Admin Page ############################
-def admin(request):
-    template = loader.get_template("pages/admin/dashboard/index.html")
 
-    try:
-        return render(request, "pages/admin/dashboard/index.html")
-    except Exception as error:
-        print(str(error))
-    return HttpResponse(template.render())
+############################## Wallet Page ############################
+@user_passes_test(user_middleware, login_url="/login")
+def wallet(request,user_id):
+    user = User.objects.get(id=user_id)
+    if request.method == "POST":
+        form = ClientWalletForm(request.POST)
+        if form.is_valid():
+            recieve_username = form.cleaned_data["recieve_address"]
+            send_coins = int(form.cleaned_data["send_coins"])
+            send_user = User.objects.get(id=user_id)
+            current_coins = int(send_user.coins)
+            recieve_user = User.objects.get(username=recieve_username)
+            if current_coins >= send_coins :
+                send_user.coins -= send_coins
+                send_user.save()
+                recieve_user.coins+=send_coins
+                recieve_user.save()
+                messages.success(request,"The transaction was successful.")
+                form = ClientWalletForm(send_user.__dict__)
 
-def user_manage(request):
-    template = loader.get_template("pages/admin/usermanagement/index.html")
+                return render(request,'pages/wallet/index.html',{"user":send_user,"form":form})
+            else:
+                messages.warning(request,"There are currently not enough coins in your possession.Please double check the quantity you wish to send.")
+            #reciever wallet address
 
-    try:
-        return render(request, "pages/admin/usermanagement/index.html")
-    except Exception as error:
-        print(str(error))
-    return HttpResponse(template.render())
-
-def wallet_manage(request):
-    template = loader.get_template("pages/admin/walletmanagement/index.html")
-
-    try:
-        return render(request, "pages/admin/walletmanagement/index.html")
-    except Exception as error:
-        print(str(error))
-    return HttpResponse(template.render())
-############################## Admin API ############################
+        else:
+            print(form.errors)
+    else:
+        
+        form = ClientWalletForm(user.__dict__)
+    return render(request,'pages/wallet/index.html',{"user":user,"form":form}) 
 
 ############################## MAIL API ##############################
 def send_mail(request):

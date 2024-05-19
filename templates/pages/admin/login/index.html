@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSHCI ADMIN</title>
+    <link rel="stylesheet" href="{% static '/css/custom_admin/style.css'%}">
+</head>
+
+<body>
+    <div class="a-login">
+        <div class="a-login__container">
+            <h1 class="a-login__ttl">LOG IN</h1>
+            <form method="POST" class="a-login__form">
+                {% csrf_token %}
+
+                {% if user.is_authenticated %}
+                <p class="mb-4 rounded-lg bg-danger-100 px-6 py-5 text-base text-red-900 mt-4">
+                    
+                    You are authenticated as {{ username }}, but are not authorized to
+                    access this page. Would you like to login to a different account?
+                    
+                </p>
+                {% endif %}
+                {% if form.non_field_errors %}
+                <div class="mb-4 rounded-lg bg-danger-100 px-6 py-5 text-base text-danger-700" role="alert">
+                    {{form.non_field_errors}}
+                </div>
+                {% endif %}
+                <div class="a-login__form-item">
+                    <p class="__item-label">User Name:</p>
+                    <input type="text" class="__item-input" name="username" id="user_name" placeholder="Name">
+                    <p class="name_error">*Invalid Name.</p>
+                </div>
+                <div class="a-login__form-item">
+                    <p class="__item-label">Password:</p>
+                    <input type="password" name="password" class="__item-input" id="user_password"
+                        placeholder="Password">
+                    <p class="password_error">*Invalid Password.</p>
+                </div>
+                <button type="submit" class="a-login__form-btn" id="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+</script>

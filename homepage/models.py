@@ -1,37 +1,29 @@
+from django.contrib.auth.models import AbstractUser as BaseUser
 from django.db import models
 
 
-
-class Wallet(models.Model):
-    class Meta:
-        verbose_name = 'Wallet'
-        verbose_name_plural = 'Wallet'
-
-    # owner = models.ForeignKey(CoinUsers,related_name='wallet_username',default='', on_delete=models.CASCADE)
-    owner = models.CharField(max_length=100,verbose_name='Owner')
-    address = models.CharField(max_length=255,verbose_name='Address', default='')
-    secretcode = models.CharField(max_length=255,verbose_name='SecretCode', default='')
-    coinamount = models.CharField(max_length=255,verbose_name='CoinAmount', default='')
-
-    def __str__(self):
-        return self.owner
+class User(BaseUser):
+    name = models.CharField(max_length=100, default="")
+    secretcode = models.CharField(max_length=100,default="")
+    coins = models.IntegerField(default=0)
     
-class CoinUsers(models.Model):
-    class Meta:
-        verbose_name = 'Users'
-        verbose_name_plural = 'Users'
-
-    name = models.CharField(max_length=100,verbose_name='Name',default='')
-    email = models.CharField(max_length=100,verbose_name='Email', default='')
-    phone = models.CharField(max_length=100,verbose_name='Phone Number', default='')
-    wallet_info = models.ManyToManyField(Wallet,related_name='owners', default='')
-
-
-    def __str__(self):
-        return self.name
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 
+class Email(models.Model):
 
+    when = models.DateTimeField(null=False, auto_now_add=True)
+    to = models.EmailField(null=False, blank=False,)
+    subject = models.CharField(null=False, max_length=128,)
+    body = models.TextField(null=False, max_length=1024,)
+    ok = models.BooleanField(null=False, default=True,)
     
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Email"
+        verbose_name_plural = "Emails"    
 

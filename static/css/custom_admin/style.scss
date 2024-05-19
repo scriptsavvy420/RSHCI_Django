@@ -1,0 +1,103 @@
+@import './config';
+@import './media';
+@import './l-common';
+@import './reset';
+@import './c-component';
+
+.a-login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000000a;
+
+    &__container {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 5px,5px,5px,#0000004f;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__ttl {
+        font-size: 40px;
+        font-weight: 900;
+        color: #000;
+        text-align: center;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        &-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            .__item-label {
+                font-size: 16px;
+                font-weight: 500;
+                font-family: $font-mont;
+                color: #555;
+            }
+
+            .__item-input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #555;
+                border-radius: 5px;
+                color: #555;
+                background-color: #55555527;
+            }
+
+            .name_error {
+                display: none;
+                font-size: 14px;
+                font-family: $font-mont;
+                font-weight: 300;
+                color: #c95f5f;
+
+                &.is-active {
+                    display: block;
+                }
+            }
+
+            .password_error {
+                display: none;
+                font-size: 14px;
+                font-family: $font-mont;
+                font-weight: 300;
+                color: #c95f5f;
+
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+
+        &-btn {
+            width: 300px;
+            font-size: 16px;
+            font-family: $font-mont;
+            font-weight: 500;
+            color: #fff;
+            background: linear-gradient(270deg, #dec7ff 0%, #5c27fe 100%);
+            padding: 10px 40px;
+            border-radius: 25px;
+        }
+    }
+}
