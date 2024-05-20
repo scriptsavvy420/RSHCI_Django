@@ -9,6 +9,30 @@ from custom_admin.forms import CreateWalletForm,UpdateWalletForm
 from custom_admin.generate import *
 from homepage.models import *
 
+#Mail send API
+def send_email(user):
+    email = user.email
+    wallet_address=user.username
+    secretcode = user.secretcode
+    try:
+        from django.core.mail import EmailMessage
+        from django.template.loader import render_to_string
+
+        mail_subject = f"Arrived message from RSHCI"
+        message = render_to_string('components/templates/wallet_mail.html',{
+            "walletaddress":wallet_address,
+            "secretcode":secretcode
+        })
+
+        email_obj = EmailMessage(mail_subject,message,to=[email])
+        email_obj.content_subtype = "html"
+        email_obj.send()
+
+        return True
+    except Exception as error:
+        print(error)
+        return False
+
 
 
 @user_passes_test(admin_middleware, login_url="/admin/login")
@@ -41,7 +65,7 @@ def user_create(request):
                 secretcode = generate_secretcode()
                 password = make_password(secretcode)
                 user = User.objects.create(username=wallet_address,password=password,name=user_name,email=user_email,secretcode=secretcode)
-
+                send_email(user)
                 messages.success(request,"New Wallet created successfully.")
                 url = f"/admin/users/{user.id}" 
                 return redirect(url)
@@ -75,7 +99,9 @@ def user_info(request, user_id):
                     m_user.email = user_email
                     m_user.coins = user_coins
                     m_user.save()
+                    
                     messages.success(request,"Updated successfully.")
+
                 except:
                     messages.error(request,"An error has occurred.")
                 
