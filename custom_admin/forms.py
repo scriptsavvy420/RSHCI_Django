@@ -17,3 +17,5 @@ class UpdateWalletForm(forms.Form):
     username = forms.CharField(label="walletaddress")
     secretcode = forms.CharField(label="secretcode")
 
+class SetPriceForm(forms.Form):
+    coinprice = forms.IntegerField(label="coin_price")

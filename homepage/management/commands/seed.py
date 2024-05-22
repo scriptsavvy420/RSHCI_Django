@@ -8,6 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.init_superuser()
+        self.init_coin()
         
 
 
@@ -22,7 +23,14 @@ class Command(BaseCommand):
             print("Superuser created successfully.")
         except Exception as error:
             print(str(error))
+    def init_coin(self):
+        try:
+            CoinPrice.objects.all().delete()
 
+            CoinPrice.objects.create(coinprice=2.22)
+            print("CoinPrice created successfully.")
+        except Exception as error:
+            print(str(error))
    
 
     

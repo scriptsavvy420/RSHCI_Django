@@ -1,5 +1,6 @@
 {% extends "layout/base_admin.html" %}
 {% load static%}
+{% load humanize %}
 
 {% block content %}
 
@@ -27,6 +28,11 @@
                             Wallet</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users/setprice">
+                        <i class="align-middle" data-feather="sliders"></i><span class="align-middle">Set Coin Price</span>
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -34,6 +40,11 @@
     <div class="a-main">
         <header class="a-header">
             <p class="a-header__ttl">RSHCI Management</p>
+            <span class="a-header__btn" id="dropdown">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
+                    <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
+                </svg>
+            </span>
         </header>
         <main class="a-content">
             <div class="a-content__item">
@@ -61,7 +72,7 @@
                                         <td>{{user.name}}</td>
                                         <td>{{user.username}}</td>
                                         <td>{{user.secretcode}}</td>
-                                        <td>{{user.coins}}</td>
+                                        <td>{{user.coins|intcomma}}</td>
                                         <td>
                                             <a href="/admin/users/{{user.id}}" class="__userinfo-update">Update</a>
                                         </td>
@@ -77,11 +88,44 @@
         <footer class="a-footer">
             <p class="a-footer__sttl">RSHCI@reserved in 2024.5</p>
         </footer>
-        
+        <div class="a-dropdown">
+            <h1 class="a-dropdown-ttl">Golden Kriptonite</h1>
+            <p class="a-dropdown-subttl">RSHCI Supercoin</p>
+            <ul class="a-dropdown-nav">
+                <li class="a-dropdown-item">
+                    <a class="a-dropdown-link" href="/admin/dashboard">
+                        <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="a-dropdown-item">
+                    <a class="a-dropdown-link" href="/admin/users/list">
+                        <span class="align-middle">User Info</span>
+                    </a>
+                </li>
+                <li class="a-dropdown-item">
+                    <a class="a-dropdown-link" href="/admin/users/create">
+                        <span class="align-middle">Create Wallet</span>
+                    </a>
+                </li>
+                <li class="a-dropdown-item">
+                    <a class="a-dropdown-link" href="/admin/users/setprice">
+                        <i class="align-middle" data-feather="sliders"></i><span class="align-middle">Set Coin Price</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     
 </div>
 
 
+{% endblock %}
+{% block javascript %}
+
+<script>
+    $("#dropdown").click(function(){
+        $(".a-dropdown").addClass("is-active");
+    });
+</script>
 {% endblock %}
 

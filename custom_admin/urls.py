@@ -14,6 +14,8 @@ urlpatterns = [
     re_path(r'^dashboard$', index, name='admin_dashboard'),
     re_path(r'^users/list$', user_list, name='admin_users_list'),
     re_path(r'^users/create$', user_create, name='admin_users_create'),
+    re_path(r'^users/setprice$', setprice, name='admin_users_setprice'),
+
     re_path(r'^users/(?P<user_id>\w+)$',user_info,name = 'user_info'),
 
 

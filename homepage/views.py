@@ -76,6 +76,8 @@ def client_login(request):
 @user_passes_test(user_middleware, login_url="/login")
 def wallet(request,user_id):
     user = User.objects.get(id=user_id)
+    coin = CoinPrice.objects.get()
+    coinprice = coin.coinprice
     if request.method == "POST":
         form = ClientWalletForm(request.POST)
         if form.is_valid():
@@ -86,13 +88,15 @@ def wallet(request,user_id):
             recieve_user = User.objects.get(username=recieve_username)
             if current_coins >= send_coins :
                 send_user.coins -= send_coins
+                send_user.estate = Decimal(send_user.coins)*coinprice
                 send_user.save()
                 recieve_user.coins+=send_coins
+                recieve_user.estate = Decimal(recieve_user.coins)*coinprice
                 recieve_user.save()
                 messages.success(request,"The transaction was successful.")
                 form = ClientWalletForm(send_user.__dict__)
 
-                return render(request,'pages/wallet/index.html',{"user":send_user,"form":form})
+                return render(request,'pages/wallet/index.html',{"user":send_user,"form":form,"coinprice":coinprice})
             else:
                 messages.warning(request,"There are currently not enough coins in your possession.Please double check the quantity you wish to send.")
             #reciever wallet address
@@ -102,7 +106,7 @@ def wallet(request,user_id):
     else:
         
         form = ClientWalletForm(user.__dict__)
-    return render(request,'pages/wallet/index.html',{"user":user,"form":form}) 
+    return render(request,'pages/wallet/index.html',{"user":user,"form":form,"coinprice":coinprice}) 
 
 ############################## MAIL API ##############################
 def send_mail(request):

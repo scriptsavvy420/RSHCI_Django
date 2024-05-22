@@ -16,15 +16,6 @@
             <h1 class="a-login__ttl">LOG IN</h1>
             <form method="POST" class="a-login__form">
                 {% csrf_token %}
-
-                {% if user.is_authenticated %}
-                <p class="mb-4 rounded-lg bg-danger-100 px-6 py-5 text-base text-red-900 mt-4">
-                    
-                    You are authenticated as {{ username }}, but are not authorized to
-                    access this page. Would you like to login to a different account?
-                    
-                </p>
-                {% endif %}
                 {% if form.non_field_errors %}
                 <div class="mb-4 rounded-lg bg-danger-100 px-6 py-5 text-base text-danger-700" role="alert">
                     {{form.non_field_errors}}

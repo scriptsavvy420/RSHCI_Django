@@ -1,6 +1,6 @@
 {% extends "layout/base_admin.html" %}
 {% load static%}
-
+{% load humanize %}
 {% block content %}
 
 <div class="a-wrapper">
@@ -48,7 +48,7 @@
             <form class="a-content__wallet" method="POST">
                 {% csrf_token %}
                 <div class="a-content__wallet-container">
-                    <h1 class="__ttl">Create New</h1>
+                    <h1 class="__ttl">Set Coin Price</h1>
                     {% if form.non_field_errors %}
                     <p class="__subttl">
                         {{form.non_field_errors}}
@@ -64,21 +64,15 @@
 
                     {% endif %}
                     <div class="__content">
-                        <div class="__user-name">
-                            <p class="__user-name__ttl">User Name</p>
-                            <input type="text" class="__user-name__input" id="userName" name="name"
-                                placeholder="User Name" value="{{form.name.value}}">
-
-                        </div>
-                        <div class="__user-email">
-                            <p class="__user-email__ttl">User Email</p>
-                            <input type="text" class="__user-email__input" id="userName" name="email"
-                                placeholder="User Email" value="{{form.email.value}}">
+                        <div class="__coin-price">
+                            <p class="__coin-price__ttl">Coin Price</p>
+                            <input type="text" class="__coin-price__input" name="coinprice"
+                                 value="{{form.coinprice.value}}">
 
                         </div>
                         
                     </div>
-                    <button class="__link" type="submit">Generate Wallet</button>
+                    <button class="__link" type="submit">Update Price</button>
 
                 </div>
             </form>
@@ -87,7 +81,7 @@
         <footer class="a-footer">
             <p class="a-footer__sttl">RSHCI@reserved in 2024.5</p>
         </footer>
-        
+
     </div>
     <div class="a-dropdown">
         <h1 class="a-dropdown-ttl">Golden Kriptonite</h1>

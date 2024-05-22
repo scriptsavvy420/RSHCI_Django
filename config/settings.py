@@ -65,8 +65,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'homepage',
-    'custom_admin'
+    'custom_admin',
+    
 ]
 SITE_ID = 1
 MIDDLEWARE = [

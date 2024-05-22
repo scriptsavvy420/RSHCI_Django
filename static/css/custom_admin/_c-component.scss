@@ -26,12 +26,12 @@ body {
     }
 
     &__logo {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
 
         @include media-sm {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
 
         }
     }
@@ -71,6 +71,14 @@ body {
         align-items: center;
         gap: 30px;
 
+        &-symbol {
+            width: 40px;
+            height: 40px;
+            img{
+                max-width: 40px;
+                object-fit: cover;
+            }
+        }
         p {
             font-size: 16px;
             font-family: $font-mont;

@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.forms.models import model_to_dict
 from utils.middlewares import *
 from django.contrib import messages
-from custom_admin.forms import CreateWalletForm,UpdateWalletForm
+from custom_admin.forms import CreateWalletForm,UpdateWalletForm,SetPriceForm
 from custom_admin.generate import *
 from homepage.models import *
 
@@ -95,9 +95,11 @@ def user_info(request, user_id):
             else:
                 try:
                     m_user = User.objects.get(id=user_id)
+                    coin = CoinPrice.objects.get()
                     m_user.name = user_name
                     m_user.email = user_email
                     m_user.coins = user_coins
+                    m_user.estate = Decimal(user_coins)*coin.coinprice
                     m_user.save()
                     
                     messages.success(request,"Updated successfully.")
@@ -114,6 +116,33 @@ def user_info(request, user_id):
 
     return render(request,'pages/admin/users/walletinfo/index.html',{"form":form})
 
+@user_passes_test(admin_middleware, login_url="/admin/login")
+def setprice(request):
+    if request.method == "POST":
+        form = SetPriceForm(request.POST)
+        if (form.is_valid()):
+
+            set_price = form.cleaned_data["coinprice"]
+            
+        
+            try:
+                coin_price = CoinPrice.objects.get()
+                coin_price.coinprice = set_price
+                coin_price.save()
+                
+                messages.success(request,"Set Coin Price successfully.")
+
+            except:
+                messages.error(request,"An error has occurred.")
+                
+        else:
+            print(form.errors)
+    else:
+        coin = CoinPrice.objects.get()
+        form = SetPriceForm(coin.__dict__)
+        
+
+    return render(request,'pages/admin/users/setprice/index.html',{"form":form})
 
 
 

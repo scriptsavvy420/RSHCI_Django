@@ -1,6 +1,6 @@
 {% extends "layout/base_wallet.html" %}
 {% load static%}
-
+{% load humanize %}
 {% block content %}
 <main class="w-main">
 
@@ -18,15 +18,15 @@
 
             {% endif %}
             <figure class="w-wallet__symbol">
-                <img src="{% static '/img/rshci-logo.jpg'%}" alt="">
+                <img src="{% static '/img/rshci-coin.png'%}" alt="">
             </figure>
             <form class="w-wallet__content" method="POST">
                 {% csrf_token %}
                 <div class="w-wallet__wrap">
-                    <p class="w-wallet__wrap-item">Owner:{{user.name}}</p>
-                    <p class="w-wallet__wrap-item">Amount:{{user.coins}}</p>
-                    <p class="w-wallet__wrap-item">Email:{{user.email}}</p>
-                    <p class="w-wallet__wrap-item">Coin Price:5.6€</p>
+                    <p class="w-wallet__wrap-item">Owner&nbsp;:&nbsp;{{user.name}}</p>
+                    <p class="w-wallet__wrap-item">Amount&nbsp;:&nbsp;{{user.coins|intcomma}}×{{coinprice}}€&nbsp;=&nbsp;{{user.estate|intcomma}}€</p>
+                    <p class="w-wallet__wrap-item">Email&nbsp;:&nbsp;{{user.email}}</p>
+                    <p class="w-wallet__wrap-item">Coin Price&nbsp;:&nbsp;{{coinprice}}€</p>
                 </div>
                 <div class="w-wallet__senditems hidden" id="senditems">
                     <div class="w-wallet__senditems-to">

@@ -197,13 +197,13 @@ body {
   }
 }
 .c-header__logo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 @media screen and (max-width: 767px) {
   .c-header__logo {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
 }
 .c-header__menu {
@@ -236,6 +236,15 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+}
+.c-header__wallet-symbol {
+  width: 40px;
+  height: 40px;
+}
+.c-header__wallet-symbol img {
+  max-width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .c-header__wallet p {
   font-size: 16px;
