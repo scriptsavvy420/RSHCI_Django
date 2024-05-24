@@ -70,8 +70,11 @@
             text-align: left;
             color: #fff;
             max-width: 800px;
-            text-wrap: pretty;
-            word-break: break-all;
+            text-wrap: balance;
+
+            @include media-sm {
+                text-align: center;
+            }
         }
 
         &--link {
@@ -270,6 +273,10 @@
             color: #A0A6F9;
             font-size: 24px;
             font-family: $font-mont;
+
+            @include media-sm {
+                text-align: center;
+            }
         }
 
         &--ttl {
@@ -281,6 +288,7 @@
 
             @include media-sm {
                 font-size: 40px;
+                text-align: center;
             }
         }
 
@@ -288,10 +296,14 @@
             font-size: 16px;
             font-weight: 500;
             font-family: $font-mont;
-            line-height: 1.5;
+            line-height: 1.8;
             color: #fff;
-            text-wrap: pretty;
-            word-break: break-all;
+            text-align: left;
+            text-wrap: balance;
+
+            @include media-sm {
+                text-align: center;
+            }
         }
 
         &--link {
@@ -326,6 +338,7 @@
         @include media-sm {
             width: 100%;
             gap: 30px;
+            align-items: center;
 
         }
     }
@@ -449,10 +462,13 @@
             font-family: $font-mont;
             font-weight: 300;
             color: #fff;
-            text-align: left;
+            text-align: center;
             text-wrap: balance;
             line-height: 1.5;
             letter-spacing: 0.08em;
+
+
+
         }
     }
 
@@ -578,7 +594,7 @@
                 font-family: $font-mont;
                 font-weight: 300;
                 color: #fff;
-                text-align: left;
+                text-align: center;
                 text-wrap: balance;
                 line-height: 1.5;
                 letter-spacing: 0.08em;
