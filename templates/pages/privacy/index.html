@@ -1,0 +1,77 @@
+{% extends "layout/base.html" %}
+{% load static%}
+
+{% block content %}
+<main class="t-main">
+    <section class="t-fv">
+        <figure class="t-fv__img">
+            <img src="{% static 'img/top/terms-fv.png'%}" alt="">
+            <h1 class="t-fv__ttl">Privacy Policy</h1>
+        </figure>
+        
+    </section>
+    <section class="t-terms">
+        <div id="particles-js" class="particle"></div>
+        <div class="t-terms__container wow fadeInUp" data-wow-duration="2s">
+            <p class="t-terms__ttl">The Privacy Policy is part of the General Conditions that govern this Website, version 1.0 dated 23/22/2018.</p>
+            <p class="t-terms__topic">Who is responsible for the processing of your data?
+            </p>
+            <p class="t-terms__ttl">RSHC International FZCO rshci.com You can contact us in any way to communicate with us. We reserve the right to modify or adapt this Privacy Policy at any time. We recommend you review it.</p>
+            <p class="t-terms__topic">What data do we collect through the Web?
+            </p>
+            <p class="t-terms__ttl">We can treat your IP, what operating system or browser you use, and even the duration of your visit, anonymously. If you provide us with information in the contact form, you will identify yourself in order to contact you, if necessary. <br>
+                • Answer your questions, requests or requests.<br>
+                • Manage the requested service, answer your request, or process your request.<br>
+                • Information by electronic means, that relate to your request.<br>
+                • Commercial information or events by electronic means, as long as there is express authorization.<br>
+                • Perform analysis and improvements on the Web, about our products and services. Improve our commercial strategy</p>
+            <p class="t-terms__ttl">The acceptance and consent of the interested party: In those cases where to make a request it is necessary to fill out a form and click on the SEND button, the realization of the same will necessarily imply that you have been informed and have expressly granted your consent to the content of the clause annexed to said form or acceptance of the privacy policy.<br>
+                All our forms have the symbol * in the mandatory data. If you do not provide these fields, or do not check the acceptance policy checkbox of the privacy policy, the sending of the information will not be allowed. Normally it has the following formula: “I have read and accept the privacy policy.”<br>
+                </p>
+            <p class="t-terms__topic">What data do we use from social networks?</p>
+
+            <p class="t-terms__ttl">• Answer your questions, requests or requests.<br>
+                • Manage the requested service, answer your request, or process your request.<br>
+                • Connect with you and create a community of followers.<br>
+                The acceptance of a contractual relationship in the environment of the corresponding social network, and in accordance with its privacy policies:<br>
+                Facebook http://www.facebook.com/policy.php?ref=pf<br>
+                Instagram https://help.instagram.com/155833707900388<br>
+                Twitter http://twitter.com/privacy<br>
+                Linkedin http://www.linkedin.com/legal/privacy-policy?trk=hb_ft_priv<br>
+                Pinterest https://about.pinterest.com/privacy-policy<br>
+                Google * http://www.google.com/intl/es/policies/privacy/<br>
+                * (Google+ and YouTube)
+                </p>
+            <p class="t-terms__topic">How long are we going to keep personal data?
+            </p>
+
+            <p class="t-terms__ttl">We can only consult or take into account your data in a restricted way when having a specific profile. The following messages, such as friends or friends, are the following.<br>
+                Any rectification of your data or restrictions of information or publications must be made through the configuration of your profile or user in the social network itself.</p>
+            <p class="t-terms__topic">Do we include personal data of third parties?</p>
+
+            <p class="t-terms__ttl">No, as a general rule we only treat the data provided by the owners. If you have provided us with data from third parties, prior duties, data and information of the persons, or otherwise you will be responsible for any responsibility for breach of this requirement.</p>
+            <p class="t-terms__topic">What about minors?
+            </p>
+            <p class="t-terms__ttl">We do not process data for children under 14 years of age. Therefore, refrain from facilitating if you do not have that age or, where appropriate, to facilitate, you do not have the appointment. RSHC International FZCO It disclaims any responsibility for the breach of this provision.</p>
+            <p class="t-terms__topic">Will we make communications by electronic means?</p>
+            <p class="t-terms__ttl">• It is only done to manage your request, if it is one of the means of contact you have given us.<br>
+                • If we make commercial communications we will have previously been and expressly authorized by you.</p>
+            <p class="t-terms__topic">What security measures do we apply?
+            </p>
+            <p class="t-terms__ttl">You can rest assured: we have implemented an optimal level of data protection. theft of personal data.
+                To which recipients will your data be communicated?
+                Your data will not be transferred to third parties, except legal obligation.</p>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block notice %}
+<div class="coinprice-notice">
+    <div class="coinprice-notice__wrap">
+        <div class="coinprice-notice__scroll">
+            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N {{coinprice.coinprice}}€</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -19,26 +19,41 @@ def homepage(request):
     template = loader.get_template("pages/top/index.html")
 
     try:
+        coinprice = CoinPrice.objects.get()
 
-        return render(request,"pages/top/index.html",{})
+        return render(request,"pages/top/index.html",{"coinprice":coinprice})
     except Exception as error:
         print(str(error))
     return HttpResponse(template.render())
 
 def cookie(request):
     template = loader.get_template("pages/cookie/index.html")
-
+    
     try:
-        return render(request,"pages/cookie/index.html")
+        coinprice = CoinPrice.objects.get()
+        return render(request,"pages/cookie/index.html",{"coinprice":coinprice})
     except Exception as error:
         print(str(error))
     return HttpResponse(template.render())
 
 def terms(request):
     template = loader.get_template("pages/terms/index.html")
+    
 
     try:
-        return render(request, "pages/terms/index.html")
+        coinprice = CoinPrice.objects.get()
+        return render(request, "pages/terms/index.html",{"coinprice":coinprice})
+    except Exception as error:
+        print(str(error))
+    return HttpResponse(template.render())
+
+def privacy(request):
+    template = loader.get_template("pages/privacy/index.html")
+    
+
+    try:
+        coinprice = CoinPrice.objects.get()
+        return render(request, "pages/privacy/index.html",{"coinprice":coinprice})
     except Exception as error:
         print(str(error))
     return HttpResponse(template.render())
@@ -46,6 +61,8 @@ def terms(request):
 ############################## Login Page ############################
 
 def client_login(request):
+    
+
     if request.method == "POST":
         form = ClientLoginForm(request.POST)
 
@@ -67,8 +84,9 @@ def client_login(request):
             print(form.errors)
     else:
         form = ClientLoginForm()
+        coinprice = CoinPrice.objects.get()
 
-    return render(request,"pages/login/index.html",{"form":form})       
+    return render(request,"pages/login/index.html",{"form":form,"coinprice":coinprice})       
         
 
 
@@ -106,7 +124,7 @@ def wallet(request,user_id):
     else:
         
         form = ClientWalletForm(user.__dict__)
-    return render(request,'pages/wallet/index.html',{"user":user,"form":form,"coinprice":coinprice}) 
+    return render(request,'pages/wallet/index.html',{"user":user,"form":form,"coinprice":coin}) 
 
 ############################## MAIL API ##############################
 def send_mail(request):

@@ -39,8 +39,9 @@ def send_email(user):
 def user_list(request):
     try:
         users = User.objects.all()
+        coinprice = CoinPrice.objects.get()
 
-        return render(request,'pages/admin/users/list/index.html',{"users":users})
+        return render(request,'pages/admin/users/list/index.html',{"users":users,"coinprice":coinprice})
     except:
         messages.warning(request,'Invalid request parameters.')
 
@@ -48,6 +49,7 @@ def user_list(request):
 
 @user_passes_test(admin_middleware, login_url="/admin/login")
 def user_create(request):
+    
     if request.method =="POST":
         form = CreateWalletForm(request.POST)
 
@@ -75,8 +77,8 @@ def user_create(request):
             print(form.errors)
     else:
         form = CreateWalletForm()    
-
-    return render(request,'pages/admin/users/create/index.html',{"form":form})
+        coinprice = CoinPrice.objects.get()
+    return render(request,'pages/admin/users/create/index.html',{"form":form,"coinprice":coinprice})
 
 @user_passes_test(admin_middleware, login_url="/admin/login")
 def user_info(request, user_id):
@@ -142,7 +144,7 @@ def setprice(request):
         form = SetPriceForm(coin.__dict__)
         
 
-    return render(request,'pages/admin/users/setprice/index.html',{"form":form})
+    return render(request,'pages/admin/users/setprice/index.html',{"form":form,"coinprice":coin})
 
 
 

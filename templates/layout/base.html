@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    {% block notice %}{% endblock %}
   <header class="c-header">
     <figure class="c-header__logo">
         <img src="{% static '/img/top/rshci-logo(top).png'%}" alt="">
@@ -21,11 +22,11 @@
     <div class="c-header__menu">
         <a href="/#home" class="c-header__menu--item">HOME</a>
         <a href="/#about" class="c-header__menu--item">ABOUT US</a>
-        <a href="/#service" class="c-header__menu--item">OUR SERVICE</a>
+        <a href="/#service" class="c-header__menu--item">OUR SERVICES</a>
         <a href="/#contact" class="c-header__menu--item">CONTACT US</a>
 
     </div>
-    <a href="login/">
+    <a href="/login">
         <div class="c-header__wallet">
             <figure class="c-header__wallet-symbol">
                 <img src="{% static '/img/top/crypto-bag.png'%}" alt="">
@@ -57,6 +58,8 @@
                     <a href="" class="__item--link">Tel : +49 15124242220</a>
                     <a href="/terms" class="__item--link">Terms of use</a>
                     <a href="/cookie" class="__item--link">Cookie policy</a>
+                    <a href="/privacy" class="__item--link">Privacy policy</a>
+
 
                 </div>
             </div>

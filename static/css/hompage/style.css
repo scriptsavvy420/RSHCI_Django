@@ -177,7 +177,7 @@ body {
 
 .c-header {
   position: absolute;
-  top: 0;
+  top: 30px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -197,8 +197,8 @@ body {
   }
 }
 .c-header__logo {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
 }
 @media screen and (max-width: 767px) {
   .c-header__logo {
@@ -226,6 +226,11 @@ body {
 }
 .c-header__menu--item:hover {
   font-weight: 700;
+}
+@media screen and (max-width: 1440px) {
+  .c-header__menu--item {
+    font-size: 16px;
+  }
 }
 .c-header__wallet {
   padding: 10px 40px;
@@ -601,6 +606,34 @@ body {
     height: 200px;
   }
 }
+.coinprice-notice {
+  width: 100%;
+  height: 50px;
+  background-color: #070A29;
+}
+.coinprice-notice__wrap {
+  width: 100%;
+  padding: 10px 50px;
+  position: relative;
+}
+.coinprice-notice__scroll {
+  width: 100%;
+  display: inline-block;
+  animation: text-scroll 35s linear infinite;
+}
+@keyframes text-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.coinprice-notice__scroll .__scroll-text {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
 .p-main {
   width: 100%;
 }
@@ -985,10 +1018,10 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
   position: relative;
+  padding-top: 50px;
 }
 .p-service__item .__item-img {
   position: absolute;
@@ -1019,8 +1052,7 @@ body {
   font-weight: 300;
   color: #fff;
   text-align: left;
-  text-wrap: pretty;
-  word-break: break-all;
+  text-wrap: balance;
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
@@ -1107,7 +1139,6 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: flex-start;
 }
 @media screen and (max-width: 1440px) {
@@ -1150,8 +1181,7 @@ body {
   font-weight: 300;
   color: #fff;
   text-align: left;
-  text-wrap: pretty;
-  word-break: break-all;
+  text-wrap: balance;
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
@@ -1391,15 +1421,8 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #fff;
 }
-.p-contact__form .__form-info_tel {
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-}
 .p-contact__form .__form-info_img {
-  padding-top: 50px;
+  padding-top: 80px;
 }
 .p-contact__form .__form-info_img img {
   max-width: 150px;
@@ -1538,7 +1561,7 @@ body {
   font-weight: 700;
   color: #fff;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 70px;
 }
 @media screen and (max-width: 767px) {
   .t-fv__ttl {
@@ -1584,6 +1607,19 @@ body {
 @media screen and (max-width: 767px) {
   .t-terms__ttl {
     font-size: 16px;
+  }
+}
+.t-terms__topic {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.5;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .t-terms__topic {
+    font-size: 24px;
   }
 }
 

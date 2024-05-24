@@ -187,15 +187,13 @@
                         <h1 class="__item-content_ttl">Real Estate</h1>
                         <p class="__item-content_subttl">Invest in our Seniors projects, more info click <a href="http://www.goldenage24.com">goldenage24.com</a>
                             <br>
-                            Real Estate 
+                            Real Estate, Hotels for Elderlies<br>
                             
-                            Hotels for Elderlies
+                            CITY Apartments<br>
                             
-                            CITY Apartments
+                            GOLF Apartments<br>
                             
-                            GOLF Apartments
-                            
-                              BEACH Apartments
+                            BEACH Apartments<br>
                             
                             + Care System
                             
@@ -229,9 +227,10 @@
                 where seniors can socialize, stay active, and pursue their passions in a welcoming and inclusive
                 environment.</p>
             <a href="http://www.goldenage24.com" class="p-gold__link">GOLDEN AGE 24, APPLY NOW</a>
-            <video class="p-gold__video" autoplay loop muted>
+            <video class="p-gold__video" id="chrome" autoplay loop muted>
                 <source src="{% static '/img/top/rshci-video.mp4' %}" type="video/mp4">
             </video>
+            <img src="{% static '/img/top/rshci-video.mp4' %}" class="p-gold__video" id="safari" alt="">
         </div>
     </section>
     <section class="p-contact" id="contact">
@@ -244,7 +243,6 @@
                 <div class="__form-info">
                     <p class="__form-info_ttl">Contact information</p>
                     <p class="__form-info_email">rshcint@gmail.com</p>
-                    <p class="__form-info_tel">Tel: 0049 15124242220</p>
                     <figure class="__form-info_img">
                         <img src="{% static '/img/top/crypto-bag.png'%}" alt="">
                     </figure>
@@ -296,6 +294,16 @@
         </div>
     </section>
 </main>
+{% endblock %}
+
+{% block notice %}
+<div class="coinprice-notice">
+    <div class="coinprice-notice__wrap">
+        <div class="coinprice-notice__scroll">
+            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N {{coinprice.coinprice}}€</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block javascript%}
@@ -390,5 +398,18 @@
 
         
     })
+</script>
+<script type="text/javascript">
+    function BrowserDetection() {
+
+    //Check if browser is Safari, if it is, hide the <video> tag, otherwise hide the <img> tag
+    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        document.getElementById('chrome').style.display= "none";
+    } else {
+        document.getElementById('safari').style.display= "none";
+    }               
+    }
+    //And run the script. Note that the script tag needs to be run after HTML so where you place it is important. 
+    BrowserDetection();
 </script>
 {% endblock %}
