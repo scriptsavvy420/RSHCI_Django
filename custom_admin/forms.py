@@ -18,4 +18,4 @@ class UpdateWalletForm(forms.Form):
     secretcode = forms.CharField(label="secretcode")
 
 class SetPriceForm(forms.Form):
-    coinprice = forms.IntegerField(label="coin_price")
+    coinprice = forms.DecimalField(label="coin_price")

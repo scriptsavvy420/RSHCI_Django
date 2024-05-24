@@ -131,7 +131,7 @@ def setprice(request):
         
             try:
                 coin_price = CoinPrice.objects.get()
-                coin_price.coinprice = set_price
+                coin_price.coinprice = Decimal(set_price)
                 coin_price.save()
                 
                 messages.success(request,"Set Coin Price successfully.")
