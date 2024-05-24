@@ -135,7 +135,7 @@ def setprice(request):
                 coin_price.save()
                 
                 messages.success(request,"Set Coin Price successfully.")
-
+                return render(request,'pages/admin/users/setprice/index.html',{"form":form,"coinprice":coin_price})
             except:
                 messages.error(request,"An error has occurred.")
                 
