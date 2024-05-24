@@ -113,15 +113,17 @@ def user_info(request, user_id):
             print(form.errors)
     else:
         user = User.objects.get(id=user_id)
+        coin = CoinPrice.objects.get()
         form = UpdateWalletForm(user.__dict__)
         
 
-    return render(request,'pages/admin/users/walletinfo/index.html',{"form":form})
+    return render(request,'pages/admin/users/walletinfo/index.html',{"form":form,"coinprice":coin})
 
 @user_passes_test(admin_middleware, login_url="/admin/login")
 def setprice(request):
     if request.method == "POST":
         form = SetPriceForm(request.POST)
+        
         if (form.is_valid()):
 
             set_price = form.cleaned_data["coinprice"]
@@ -140,11 +142,11 @@ def setprice(request):
         else:
             print(form.errors)
     else:
-        coin = CoinPrice.objects.get()
-        form = SetPriceForm(coin.__dict__)
+        coin_price = CoinPrice.objects.get()
+        form = SetPriceForm(coin_price.__dict__)
         
 
-    return render(request,'pages/admin/users/setprice/index.html',{"form":form,"coinprice":coin})
+    return render(request,'pages/admin/users/setprice/index.html',{"form":form,"coinprice":coin_price})
 
 
 
