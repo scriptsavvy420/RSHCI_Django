@@ -77,6 +77,21 @@
             }
         }
 
+        &--url {
+            font-family: $font-mont;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            text-align: left;
+            color: #fff;
+            text-wrap: balance;
+            text-decoration: underline;
+
+            @include media-sm {
+                text-align: center;
+            } 
+        }
+
         &--link {
             width: 100%;
             display: flex;
@@ -833,6 +848,10 @@
             align-items: center;
             gap: 10px;
 
+            @include media-sm {
+                padding: 10px;
+            }
+
             &_ttl {
                 width: 100%;
                 text-align: left;
@@ -840,6 +859,9 @@
                 font-family: $font-mont;
                 color: #fff;
 
+                @include media-sm {
+                    text-align: center;
+                }
             }
 
             &_email {
@@ -848,13 +870,19 @@
                 font-size: 20px;
                 font-family: $font-mont;
                 color: #fff;
+
+                @include media-sm {
+                    text-align: center;
+                }
             }
 
             
 
             &_img {
                 padding-top: 80px;
-
+                @include media-sm {
+                    padding-top: 10px;
+                }
                 img {
                     max-width: 150px;
                     object-fit: cover;
@@ -873,6 +901,7 @@
 
             @include media-sm {
                 border-left: 0;
+                padding: 20px;
             }
 
             &_up {
@@ -1118,6 +1147,17 @@
         font-weight: normal;
         line-height: 1.5;
         color: #fff;
+
+        @include media-sm {
+            display: none;
+        }
+
+        &.sm {
+            display: none;
+            @include media-sm {
+                display: block;
+            }
+        }
     }
 
     .__success {
@@ -1175,6 +1215,10 @@
         column-gap: 20px;
         row-gap: 20px;
 
+        @include media-sm {
+            grid-template-columns: repeat(1,1fr);
+        }
+
         &-item {
             width: 100%;
             font-size: 16px;
@@ -1193,6 +1237,10 @@
         gap: 10px;
         padding-top: 30px;
         padding-bottom: 30px;
+
+        @include media-sm {
+            flex-direction: column;
+        }
 
         &.hidden {
             display: none;

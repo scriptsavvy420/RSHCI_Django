@@ -11,6 +11,7 @@
             <div class="p-fv__content">
                 <h1 class="p-fv__content--ttl">Robusto Societe<br>
                     Helvetia Capitale <br>Internationale</h1>
+                <a href="http://RSHCINT.com" class="p-fv__content--url">RSHCINT.com</a>
                 <p class="p-fv__content--subttl">
                     We are in the process of acquiring our own full banking license, so we will comply with the law
                     and create something completely new with huge potential.
@@ -21,7 +22,7 @@
                 </a>
                 <div class="p-fv__content--num">
                     <div class="__num-item" id="fun-fact">
-                            <span class="timer " data-to="1000 " data-speed="3000 "></span>
+                            <span class="timer " data-to="7500 " data-speed="3000 "></span>
                             <span class="__num-item_ttl">User</span>
                     </div>
                     <div class="__num-item" id="fun-fact">
@@ -51,7 +52,7 @@
                     About Us
                 </p>
                 <h1 class="p-about__content--ttl">
-                    Meet the<br>Visionaries Behind<br>RSHC Foundation
+                    Meet the<br>Visionaries Behind<br>RSHCI Foundation
                 </h1>
                 <p class="p-about__content--subttl">RSHCI COIN is a central crypto currency limited to 1,000,000,000
                     - 1 billion coins. Its value can only increase and cannot be manipulated downward through sales.
@@ -82,7 +83,7 @@
                         <img src="{% static '/img/top/p-service_item2.png'%}" alt="">
                     </span>
                     <h1 class="__item-ttl">Real Estate Solutions</h1>
-                    <p class="__item-subttl">At RSHC Foundation, we offer comprehensive Real Estate Solutions
+                    <p class="__item-subttl">At RSHCI Foundation, we offer comprehensive Real Estate Solutions
                         designed to elevate properties to new heights of sustainability, efficiency, and value. </p>
                 </div>
                 <div class="p-service__item">
@@ -165,7 +166,7 @@
                     </figure>
                     <div class="__item-content">
                         <h1 class="__item-content_ttl">Crypto Currencies</h1>
-                        <p class="__item-content_subttl">Invest in our own crypto`s <a href="">PCGP </a><br>
+                        <p class="__item-content_subttl">Invest in our own crypto`s <a href="http://grootpandacoin.com">PCGP </a><br>
                             Power Coin Groot & Panda, growing bamboo, natural products, detox for the whole body, seawater desalination, organic fashion superfood
                         </p>
                     </div>
@@ -193,18 +194,16 @@
                             
                             GOLF Apartments<br>
                             
-                            BEACH Apartments<br>
+                            BEACH Apartments<br><br>
                             
-                            + Care System
-                            
-                            +Healthy Food</p>
+                            + Care System&nbsp; +Healthy Food</p>
                     </div>
                 </div>
 
             </div>
             <div class="p-reason_stategy">
                 <div class="__stategy-item" id="fun-fact">
-                    <span class="timer " data-to="1000 " data-speed="3000 "></span>
+                    <span class="timer " data-to="7500 " data-speed="3000 "></span>
                     <span class="__ttl">User</span>
                 </div>
                 <div class="__stategy-item" id="fun-fact">
@@ -220,29 +219,27 @@
     </section>
     <section class="p-gold" id="gold">
         <div class="p-gold__container wow bounceInUp">
-            <p class="p-gold__deco">Golden Age</p>
+            <a class="p-gold__deco" href="http://www.goldenage24.com">Golden Age</a>
             <h1 class="p-gold__ttl">Golden Age 24, the Seniors Club</h1>
             <p class="p-gold__subttl">Golden Age 24 is a vibrant and welcoming Seniors Club dedicated to enhancing
                 the lives of older adults aged 60 and above. Our club provides a supportive and engaging community
                 where seniors can socialize, stay active, and pursue their passions in a welcoming and inclusive
                 environment.</p>
             <a href="http://www.goldenage24.com" class="p-gold__link">GOLDEN AGE 24, APPLY NOW</a>
-            <video class="p-gold__video" id="chrome" autoplay loop muted>
-                <source src="{% static '/img/top/rshci-video.mp4' %}" type="video/mp4">
-            </video>
-            <img src="{% static '/img/top/rshci-video.mp4' %}" class="p-gold__video" id="safari" alt="">
+            
+            <iframe src="{% static '/img/top/rshci-video.mp4' %}"  class="p-gold__video"  alt="" autoplay loop></iframe>
         </div>
     </section>
     <section class="p-contact" id="contact">
         <div class="p-contact__container wow fadeInUp">
-            <p class="p-contact__deco">Get in Touch!</p>
+            <a class="p-contact__deco" href="mailto:rshcint@gmail.com">Get in Touch!</a>
             <h1 class="p-contact__ttl">Let’s Start Working
                 Together</h1>
             <form class="p-contact__form" action="{% url 'homepage:send_mail' %}" id ="p-contact__form" method="post"> 
                 {% csrf_token %}
                 <div class="__form-info">
                     <p class="__form-info_ttl">Contact information</p>
-                    <p class="__form-info_email">rshcint@gmail.com</p>
+                    <a class="__form-info_email" href="mailto:rshcint@gmail.com">rshcint@gmail.com</a>
                     <figure class="__form-info_img">
                         <img src="{% static '/img/top/crypto-bag.png'%}" alt="">
                     </figure>
@@ -300,7 +297,7 @@
 <div class="coinprice-notice">
     <div class="coinprice-notice__wrap">
         <div class="coinprice-notice__scroll">
-            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N. &nbsp;&nbsp; {{coinprice.coinprice}}€</p>
+            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N. &nbsp;&nbsp; {{coinprice.coinprice}}&nbsp;€</p>
         </div>
     </div>
 </div>
@@ -399,17 +396,5 @@
         
     })
 </script>
-<script type="text/javascript">
-    function BrowserDetection() {
 
-    //Check if browser is Safari, if it is, hide the <video> tag, otherwise hide the <img> tag
-    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-        document.getElementById('chrome').style.display= "none";
-    } else {
-        document.getElementById('safari').style.display= "none";
-    }               
-    }
-    //And run the script. Note that the script tag needs to be run after HTML so where you place it is important. 
-    BrowserDetection();
-</script>
 {% endblock %}
