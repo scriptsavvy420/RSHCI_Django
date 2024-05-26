@@ -77,7 +77,7 @@
             }
         }
 
-        
+
         &--url {
             font-family: $font-mont;
             font-weight: 500;
@@ -621,6 +621,7 @@
                     font-weight: 400;
                     color: #fff;
                     text-decoration: underline;
+                    white-space: nowrap;
                 }
             }
         }

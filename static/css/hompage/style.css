@@ -1232,6 +1232,7 @@ body {
   font-weight: 400;
   color: #fff;
   text-decoration: underline;
+  white-space: nowrap;
 }
 .p-reason_stategy {
   width: 90%;
