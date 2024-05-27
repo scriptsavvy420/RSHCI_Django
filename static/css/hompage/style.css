@@ -1456,8 +1456,8 @@ body {
 }
 .p-contact__form .__form-info_ttl {
   width: 100%;
-  text-align: left;
-  font-size: 16px;
+  text-align: center;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
   color: #fff;
 }
@@ -1469,7 +1469,7 @@ body {
 .p-contact__form .__form-info_email {
   width: 100%;
   text-align: left;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
   color: #fff;
 }

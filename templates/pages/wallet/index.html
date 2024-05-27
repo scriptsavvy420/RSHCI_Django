@@ -2,6 +2,7 @@
 {% load static%}
 {% load humanize %}
 {% block content %}
+{% load l10n %}
 <main class="w-main">
 
     <section class="w-wallet">
@@ -26,9 +27,9 @@
                 {% csrf_token %}
                 <div class="w-wallet__wrap">
                     <p class="w-wallet__wrap-item">Owner&nbsp;:&nbsp;{{user.name}}</p>
-                    <p class="w-wallet__wrap-item">Amount&nbsp;:&nbsp;{{user.coins|intcomma}}×{{coinprice.coinprice}}&nbsp;€&nbsp;=&nbsp;{{user.estate|intcomma}}€</p>
+                    <p class="w-wallet__wrap-item">Amount&nbsp;:&nbsp;{{user.coins|localize}}×{{coinprice.coinprice}}&nbsp;€&nbsp;=&nbsp;{{user.estate|intcomma}}€</p>
                     <p class="w-wallet__wrap-item">Email&nbsp;:&nbsp;{{user.email}}</p>
-                    <p class="w-wallet__wrap-item">Coin Price&nbsp;:&nbsp;{{coinprice.coinprice}}&nbsp;€</p>
+                    <p class="w-wallet__wrap-item">Coin Price&nbsp;:&nbsp;{{coinprice.coinprice|localize }}&nbsp;€</p>
                 </div>
                 <div class="w-wallet__senditems hidden" id="senditems">
                     <div class="w-wallet__senditems-to">
@@ -52,7 +53,7 @@
 <div class="coinprice-notice">
     <div class="coinprice-notice__wrap">
         <div class="coinprice-notice__scroll">
-            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N. &nbsp;&nbsp; {{coinprice.coinprice}}&nbsp;€</p>
+            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N. &nbsp;&nbsp; {{coinprice.coinprice|localize }}&nbsp;€</p>
         </div>
     </div>
 </div>
