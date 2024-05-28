@@ -1240,10 +1240,14 @@
             font-weight: 400;
             color: #fff;
 
-            @include media-xs {
-                font-size: 13px;
+            @include media-sm {
+                font-size: 14px;
                 text-wrap: balance;
                 max-width: 300px;
+            }
+
+            @include media-xs {
+                font-size: 13px;
             }
         }
     }

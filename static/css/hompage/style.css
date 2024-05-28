@@ -1817,11 +1817,16 @@ body {
   font-weight: 400;
   color: #fff;
 }
+@media screen and (max-width: 767px) {
+  .w-wallet__wrap-item {
+    font-size: 14px;
+    text-wrap: balance;
+    max-width: 300px;
+  }
+}
 @media screen and (max-width: 450px) {
   .w-wallet__wrap-item {
     font-size: 13px;
-    text-wrap: balance;
-    max-width: 300px;
   }
 }
 .w-wallet__senditems {
