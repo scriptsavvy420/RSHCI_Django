@@ -168,10 +168,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = "en-En"
+LANGUAGE_CODE = "de"
 
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
@@ -212,6 +214,3 @@ DISABLE_DARK_MODE = True
 
 AUTH_USER_MODEL = "homepage.User"
 
-DECIMAL_SEPARATOR = ','
-THOUSAND_SEPARATOR = '.'
-USE_L10N = True

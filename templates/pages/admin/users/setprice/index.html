@@ -1,6 +1,8 @@
 {% extends "layout/base_admin.html" %}
 {% load static%}
 {% load humanize %}
+{% load l10n %}
+{% load custom_filter %}
 {% block content %}
 
 <div class="a-wrapper">
@@ -67,7 +69,7 @@
                         <div class="__coin-price">
                             <p class="__coin-price__ttl">Coin Price</p>
                             <input type="text" class="__coin-price__input" name="coinprice"
-                                 value="{{form.coinprice.value}}">
+                                 value="{{form.coinprice.value|european_number_format}}">
 
                         </div>
                         
@@ -117,7 +119,7 @@
 <div class="coinprice-notice">
     <div class="coinprice-notice__wrap">
         <div class="coinprice-notice__scroll">
-            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N.&nbsp;&nbsp; {{coinprice.coinprice}}&nbsp;€</p>
+            <p class="__scroll-text">RSHCI S.U.P.E.R.C.O.I.N.&nbsp;&nbsp; {{coinprice.coinprice|european_number_format}}&nbsp;€</p>
         </div>
     </div>
 </div>
