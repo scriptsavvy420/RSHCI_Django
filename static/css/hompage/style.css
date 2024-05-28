@@ -413,7 +413,7 @@ body {
 .particle {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 94%;
   background-color: transparent;
 }
 
@@ -1713,12 +1713,22 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 450px) {
+  .w-wallet__container {
+    padding: 30px 10px 10px 10px;
+  }
+}
 .w-wallet__ttl {
   font-size: 40px;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   line-height: 1.5;
   color: #fff;
+}
+@media screen and (max-width: 450px) {
+  .w-wallet__ttl {
+    font-size: 30px;
+  }
 }
 .w-wallet__subttl {
   font-size: 16px;
@@ -1779,6 +1789,11 @@ body {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+@media screen and (max-width: 450px) {
+  .w-wallet__content-btn {
+    width: 250px;
+  }
+}
 .w-wallet__content-btn.hidden {
   display: none;
 }
@@ -1801,6 +1816,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #fff;
+}
+@media screen and (max-width: 450px) {
+  .w-wallet__wrap-item {
+    font-size: 13px;
+    text-wrap: balance;
+    max-width: 300px;
+  }
 }
 .w-wallet__senditems {
   width: 100%;

@@ -29,7 +29,7 @@
                 {% csrf_token %}
                 <div class="w-wallet__wrap">
                     <p class="w-wallet__wrap-item">Owner&nbsp;:&nbsp;{{user.name}}</p>
-                    <p class="w-wallet__wrap-item">Amount&nbsp;:&nbsp;{{user.coins|european_number_format}}×{{coinprice.coinprice}}&nbsp;€&nbsp;=&nbsp;{{user.estate|european_number_format}}€</p>
+                    <p class="w-wallet__wrap-item">Amount&nbsp;:&nbsp;{{user.coins|european_number_format}}×{{coinprice.coinprice|european_number_format}}&nbsp;€&nbsp;=&nbsp;{{user.estate|european_number_format}}€</p>
                     <p class="w-wallet__wrap-item">Email&nbsp;:&nbsp;{{user.email}}</p>
                     <p class="w-wallet__wrap-item">Coin Price&nbsp;:&nbsp;{{coinprice.coinprice|european_number_format }}&nbsp;€</p>
                 </div>

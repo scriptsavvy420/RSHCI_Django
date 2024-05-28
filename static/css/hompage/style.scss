@@ -1133,6 +1133,10 @@
         justify-content: center;
         align-items: center;
 
+        @include media-xs {
+            padding: 30px 10px 10px 10px;
+        }
+
     }
 
     &__ttl {
@@ -1141,6 +1145,10 @@
         font-weight: 500;
         line-height: 1.5;
         color: #fff;
+
+        @include media-xs {
+            font-size: 30px;
+        }
     }
 
     &__subttl {
@@ -1204,6 +1212,10 @@
             margin-bottom: 20px;
             margin-top: 20px;
 
+            @include media-xs {
+                width: 250px;
+            }
+
             &.hidden {
                 display: none;
             }
@@ -1227,6 +1239,12 @@
             font-family: $font-mont;
             font-weight: 400;
             color: #fff;
+
+            @include media-xs {
+                font-size: 13px;
+                text-wrap: balance;
+                max-width: 300px;
+            }
         }
     }
 
