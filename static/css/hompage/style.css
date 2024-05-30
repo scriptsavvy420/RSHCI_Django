@@ -1479,7 +1479,7 @@ body {
   }
 }
 .p-contact__form .__form-info_img {
-  padding-top: 80px;
+  padding-top: 30px;
 }
 @media screen and (max-width: 767px) {
   .p-contact__form .__form-info_img {
