@@ -13,7 +13,7 @@ class CreateWalletForm(forms.Form):
 class UpdateWalletForm(forms.Form):
     name = forms.CharField(label="username")
     email = forms.CharField(label="useremail")
-    coins = forms.CharField(label="coins")
+    coins = forms.DecimalField(label="coins")
     username = forms.CharField(label="walletaddress")
     secretcode = forms.CharField(label="secretcode")
 
