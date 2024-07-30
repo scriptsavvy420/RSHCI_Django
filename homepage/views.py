@@ -139,7 +139,7 @@ def send_mail(request):
         periods = request.POST.get('contact-investPeriods')
 
         description = request.POST.get('contact-text')
-        company_email = f"rshcint@gmail.com"
+        company_email = f"yoshidadaisuke0420@gmail.com"
 
         try:
             from django.core.mail import EmailMessage
